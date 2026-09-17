@@ -1,0 +1,2907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Smart — Digestive System Disorders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EEEDE3;
+    --paper-2:#F7F6F0;
+    --ink:#20241E;
+    --ink-soft:#4B5049;
+    --accent:#8B3A2B;
+    --accent-soft:#C97E63;
+    --teal:#3E6259;
+    --teal-soft:#DCE7E2;
+    --line:#D6D2C2;
+    --card:#FFFFFF;
+    --good:#3E6259;
+    --bad:#8B3A2B;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans',sans-serif;
+    line-height:1.55;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:38px 38px;
+    background-position:-1px -1px;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    margin:0 0 .4em 0;
+    color:var(--ink);
+  }
+  p{margin:.3em 0 .7em 0;}
+  ::selection{background:var(--accent-soft); color:#fff;}
+
+  /* ---------- Header ---------- */
+  header.top{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    padding:34px clamp(18px,4vw,52px) 18px clamp(18px,4vw,52px);
+    border-bottom:2px solid var(--ink);
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  header.top .brand{max-width:620px;}
+  header.top .brand .kicker{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.04em;
+    color:var(--accent);
+    margin-bottom:6px;
+  }
+  header.top h1{
+    font-size:clamp(30px,4.4vw,50px);
+    line-height:1.02;
+    letter-spacing:-.01em;
+  }
+  header.top .sub{
+    font-size:15px;
+    color:var(--ink-soft);
+    max-width:520px;
+  }
+  header.top .badge{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+    text-align:right;
+    border-left:1px solid var(--line);
+    padding-left:16px;
+  }
+
+  /* ---------- Layout ---------- */
+  .shell{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    min-height:70vh;
+  }
+  nav.tabs{
+    border-right:2px solid var(--ink);
+    padding:22px 0;
+  }
+  nav.tabs button{
+    display:block;
+    width:100%;
+    text-align:left;
+    background:none;
+    border:none;
+    border-left:4px solid transparent;
+    font-family:'IBM Plex Sans',sans-serif;
+    font-size:15px;
+    font-weight:600;
+    color:var(--ink-soft);
+    padding:14px 20px 14px 18px;
+    cursor:pointer;
+    position:relative;
+    transition:background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  nav.tabs button .n{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:500;
+    font-size:11px;
+    color:var(--accent);
+    display:block;
+    margin-bottom:3px;
+    letter-spacing:.03em;
+  }
+  nav.tabs button:hover{background:var(--paper-2); color:var(--ink);}
+  nav.tabs button.active{
+    background:var(--card);
+    color:var(--ink);
+    border-left:4px solid var(--accent);
+  }
+
+  main{padding:clamp(20px,3.4vw,44px);}
+  section.pane{display:none; animation:fade .25s ease;}
+  section.pane.active{display:block;}
+  @keyframes fade{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;} }
+
+  section.pane > .intro{max-width:680px; margin-bottom:26px;}
+  section.pane > .intro h2{font-size:clamp(24px,3vw,32px);}
+  section.pane > .intro .lede{color:var(--ink-soft); font-size:15px;}
+
+  /* ---------- Overview ---------- */
+  .law-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(270px,1fr));
+    gap:14px;
+  }
+  .law-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-top:3px solid var(--teal);
+    padding:16px 18px;
+  }
+  .law-card h3{font-size:16px; margin-bottom:8px;}
+  .law-card ul{margin:0; padding-left:18px;}
+  .law-card li{font-size:13.5px; margin-bottom:4px; color:var(--ink);}
+  .law-card li b{color:var(--accent);}
+
+  /* ---------- Diagrams ---------- */
+  .diagram-block{
+    background:var(--card);
+    border:1px solid var(--line);
+    padding:20px 22px;
+    margin-bottom:22px;
+  }
+  .diagram-block h3{font-size:18px; margin-bottom:2px;}
+  .diagram-block .hint{
+    font-size:12.5px; color:var(--ink-soft); margin-bottom:14px;
+    font-family:'IBM Plex Mono',monospace;
+  }
+
+  /* balance widget */
+  .balance-wrap{display:flex; gap:16px; flex-wrap:wrap;}
+  .balance-col{flex:1; min-width:220px;}
+  .balance-col h4{font-size:13px; text-transform:none; margin-bottom:8px; color:var(--ink-soft); font-family:'IBM Plex Sans'; font-weight:600;}
+  .chip{
+    display:inline-block;
+    margin:0 6px 8px 0;
+    padding:7px 12px;
+    border:1px solid var(--line);
+    background:var(--paper-2);
+    font-size:13px;
+    cursor:pointer;
+    border-radius:var(--radius);
+    transition:.15s;
+  }
+  .chip.aggr:hover, .chip.aggr.on{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .chip.def:hover, .chip.def.on{background:var(--teal); color:#fff; border-color:var(--teal);}
+  .reveal-box{
+    margin-top:10px;
+    padding:12px 14px;
+    background:var(--paper-2);
+    border-left:3px solid var(--accent);
+    font-size:13.5px;
+    min-height:20px;
+  }
+
+  /* flow widget */
+  .flow{display:flex; align-items:center; flex-wrap:wrap; gap:6px; margin-bottom:10px;}
+  .flow .node{
+    padding:10px 14px;
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    font-size:13px;
+    cursor:pointer;
+    text-align:center;
+  }
+  .flow .node:hover{border-color:var(--teal);}
+  .flow .node.blocked{border:1px dashed var(--accent); color:var(--accent);}
+  .flow .arrow{font-family:'IBM Plex Mono',monospace; color:var(--ink-soft);}
+
+  /* stepper */
+  .stepper{display:flex; flex-wrap:wrap; gap:0; margin-bottom:12px;}
+  .step{
+    flex:1; min-width:150px;
+    padding:12px 14px;
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    border-left:none;
+    cursor:pointer;
+    font-size:13px;
+    position:relative;
+  }
+  .step:first-child{border-left:1px solid var(--line);}
+  .step .num{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent); display:block; margin-bottom:4px;}
+  .step.on{background:var(--teal); color:#fff;}
+  .step.on .num{color:#F4EDE3;}
+
+  /* table */
+  table.cmp{width:100%; border-collapse:collapse; font-size:13.5px;}
+  table.cmp th{
+    text-align:left; font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:11.5px;
+    color:var(--ink-soft); padding:8px 10px; border-bottom:2px solid var(--ink);
+  }
+  table.cmp td{padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top;}
+  table.cmp tr{cursor:pointer;}
+  table.cmp tr:hover td{background:var(--paper-2);}
+  table.cmp tr.on td{background:var(--teal-soft);}
+  table.cmp td.feat{font-weight:600;}
+
+  /* ---------- Mini map ---------- */
+  .mm-wrap{display:grid; grid-template-columns:260px 1fr; gap:0; border:1px solid var(--line); min-height:420px;}
+  .mm-list{border-right:1px solid var(--line); padding:6px 0; max-height:560px; overflow-y:auto;}
+  .mm-list button{
+    display:block; width:100%; text-align:left; background:none; border:none;
+    border-bottom:1px solid var(--line);
+    padding:12px 16px; font-size:13.5px; font-family:'IBM Plex Sans'; color:var(--ink);
+    cursor:pointer;
+  }
+  .mm-list button:hover{background:var(--paper-2);}
+  .mm-list button.on{background:var(--teal); color:#fff; font-weight:600;}
+  .mm-panel{padding:26px 28px; background:var(--card);}
+  .mm-panel h3{font-size:20px; margin-bottom:10px;}
+  .mm-panel p{font-size:14.5px; color:var(--ink);}
+  .mm-empty{color:var(--ink-soft); font-size:14px; font-style:italic;}
+
+  /* ---------- Flashcards ---------- */
+  .fc-toolbar{display:flex; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap;}
+  .fc-toolbar .count{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-soft);
+  }
+  button.btn{
+    font-family:'IBM Plex Sans'; font-size:13px; font-weight:600;
+    background:var(--ink); color:#fff; border:none; padding:9px 16px; cursor:pointer;
+  }
+  button.btn:hover{background:var(--accent);}
+  button.btn.ghost{background:none; color:var(--ink); border:1px solid var(--line);}
+  button.btn.ghost:hover{border-color:var(--ink);}
+
+  /* ---------- Level selector ---------- */
+  .level-toolbar{
+    display:flex; align-items:center; gap:8px; margin-bottom:14px; flex-wrap:wrap;
+  }
+  .level-toolbar .level-label{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.04em;
+    color:var(--ink-soft); margin-right:2px; text-transform:uppercase;
+  }
+  button.level-btn{
+    font-family:'IBM Plex Sans'; font-size:13px; font-weight:600;
+    background:none; color:var(--ink-soft); border:1px solid var(--line);
+    padding:8px 14px; cursor:pointer; transition:all .15s ease;
+  }
+  button.level-btn:hover{border-color:var(--teal); color:var(--ink);}
+  button.level-btn.active{
+    background:var(--teal); color:#fff; border-color:var(--teal);
+  }
+
+  .fc-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+    gap:14px;
+  }
+  .fc-card{
+    perspective:1200px;
+    height:210px;
+    cursor:pointer;
+  }
+  .fc-inner{
+    position:relative; width:100%; height:100%;
+    transform-style:preserve-3d;
+    transition:transform .5s cubic-bezier(.4,.2,.2,1);
+  }
+  .fc-card.flipped .fc-inner{transform:rotateY(180deg);}
+  .fc-face{
+    position:absolute; inset:0;
+    backface-visibility:hidden;
+    border:1px solid var(--line);
+    padding:30px 14px 14px 14px;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    font-size:13px;
+    line-height:1.4;
+    overflow-y:auto;
+    word-break:break-word;
+  }
+  .fc-front{background:var(--card);}
+  .fc-front .tag{
+    position:absolute; top:8px; left:10px;
+    font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent);
+  }
+  .fc-back{background:var(--teal); color:#fff; transform:rotateY(180deg);}
+
+  /* ---------- Quiz ---------- */
+  .quiz-toolbar{
+    display:flex; align-items:center; justify-content:space-between; gap:14px;
+    margin-bottom:18px; flex-wrap:wrap;
+    padding:14px 18px;
+    background:var(--card); border:1px solid var(--line);
+  }
+  .score{font-family:'IBM Plex Mono',monospace; font-size:14px;}
+  .score b{color:var(--accent); font-size:16px;}
+  .q-item{
+    background:var(--card); border:1px solid var(--line);
+    padding:16px 18px; margin-bottom:12px;
+  }
+  .q-item .q-head{display:flex; gap:10px; margin-bottom:10px;}
+  .q-item .q-num{font-family:'IBM Plex Mono',monospace; color:var(--accent); font-size:13px;}
+  .q-item .q-text{font-size:14.5px; font-weight:600;}
+  .q-opts{display:grid; gap:8px;}
+  .q-opt{
+    text-align:left; padding:10px 12px; border:1px solid var(--line); background:var(--paper-2);
+    font-size:13.5px; cursor:pointer; font-family:'IBM Plex Sans';
+  }
+  .q-opt:hover{border-color:var(--teal);}
+  .q-opt.correct{background:var(--teal-soft); border-color:var(--teal); font-weight:600;}
+  .q-opt.wrong{background:#F3E1DC; border-color:var(--accent);}
+  .q-opt[disabled]{cursor:default;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    text-align:center;
+    padding:22px 12px 30px 12px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+    border-top:1px solid var(--line);
+  }
+
+  @media (max-width:760px){
+    .shell{grid-template-columns:1fr;}
+    nav.tabs{
+      display:flex; overflow-x:auto; border-right:none; border-bottom:2px solid var(--ink);
+      padding:8px 6px;
+    }
+    nav.tabs button{width:auto; white-space:nowrap; border-left:none; border-bottom:4px solid transparent;}
+    nav.tabs button.active{border-left:none; border-bottom:4px solid var(--accent);}
+    .mm-wrap{grid-template-columns:1fr;}
+    .mm-list{border-right:none; border-bottom:1px solid var(--line); max-height:220px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <div class="kicker">GASTROINTESTINAL PATHOLOGY · REVISION TOOL</div>
+    <h1>Study Smart</h1>
+    <div class="sub">Disorders of the digestive system, organized for revision: the essential rules, the mechanisms drawn out, and enough practice to know it cold.</div>
+  </div>
+  <div class="badge">5 sections<br>Oral cavity → Appendix</div>
+</header>
+
+<div class="shell">
+  <nav class="tabs">
+    <button class="tab-btn active" data-pane="overview"><span class="n">01</span>Overview</button>
+    <button class="tab-btn" data-pane="diagrams"><span class="n">02</span>Diagrams</button>
+    <button class="tab-btn" data-pane="minimap"><span class="n">03</span>Mini Map</button>
+    <button class="tab-btn" data-pane="flashcards"><span class="n">04</span>Flash Cards</button>
+    <button class="tab-btn" data-pane="quiz"><span class="n">05</span>Quiz Bank</button>
+  </nav>
+
+  <main>
+
+    <!-- ============ OVERVIEW ============ -->
+    <section class="pane active" id="overview">
+      <div class="intro">
+        <h2>The rules, not the lecture</h2>
+        <p class="lede">One card per topic. Just the facts worth remembering on exam day.</p>
+      </div>
+      <div class="law-grid" id="lawGrid"></div>
+    </section>
+
+    <!-- ============ DIAGRAMS ============ -->
+    <section class="pane" id="diagrams">
+      <div class="intro">
+        <h2>Mechanisms, worked out by hand</h2>
+        <p class="lede">Click any chip, node, step, or row to reveal what it means.</p>
+      </div>
+
+      <div class="diagram-block">
+        <h3>Peptic ulcer: the balance that decides</h3>
+        <div class="hint">click a factor on either side</div>
+        <div class="balance-wrap">
+          <div class="balance-col">
+            <h4>Aggressive factors</h4>
+            <span class="chip aggr" data-txt="H. pylori damages mucosa directly (urease, proteases, phospholipases) and triggers a strong local inflammatory response.">Helicobacter pylori</span>
+            <span class="chip aggr" data-txt="Alcohol strips the protective mucous layer and irritates the epithelium directly.">Alcohol intake</span>
+            <span class="chip aggr" data-txt="NSAIDs and aspirin block cyclooxygenase, cutting protective prostaglandin production; aspirin is also a direct mucosal irritant.">NSAIDs, aspirin</span>
+            <span class="chip aggr" data-txt="Smoking impairs mucosal blood flow and healing, and worsens the effect of other risk factors.">Smoking</span>
+            <span class="chip aggr" data-txt="Acid and pepsin are the actual agents of digestion — vital to ulcer formation once defenses are breached.">Peptic acid secretion</span>
+            <span class="chip aggr" data-txt="Bile refluxing back into the stomach is itself corrosive to gastric mucosa.">Bile reflux</span>
+          </div>
+          <div class="balance-col">
+            <h4>Defending factors</h4>
+            <span class="chip def" data-txt="A continuous mucus and bicarbonate layer keeps the epithelial surface at a near-neutral pH despite the acidic lumen.">Mucus and bicarbonate</span>
+            <span class="chip def" data-txt="A rich capillary network supplies oxygen and buffers acid that leaks through the mucus layer.">Blood flow</span>
+            <span class="chip def" data-txt="Nitric oxide and prostaglandins maintain blood flow and stimulate mucus/bicarbonate output.">Nitric oxide, prostaglandins</span>
+            <span class="chip def" data-txt="Rapid replacement of damaged epithelial cells keeps the barrier intact.">Growth factor & cell renewal</span>
+            <span class="chip def" data-txt="Antioxidants neutralize free radicals generated during inflammation, limiting tissue damage.">Antioxidant defense</span>
+          </div>
+        </div>
+        <div class="reveal-box" id="balanceReveal">Select a factor to read what it does.</div>
+      </div>
+
+      <div class="diagram-block">
+        <h3>Drug-induced ulcers: where the drugs intervene</h3>
+        <div class="hint">click a step in the pathway</div>
+        <div class="flow" id="drugFlow">
+          <div class="node" data-txt="The pathway starts at the phospholipid bilayer of the cell membrane." data-t="Plasma membrane">Plasma membrane</div>
+          <span class="arrow">→</span>
+          <div class="node blocked" data-txt="Corticosteroids block phospholipase A2, the enzyme that releases arachidonic acid from the membrane — cutting the pathway off at its source." data-t="Phospholipase A2 (blocked by corticosteroids)">Phospholipase A2</div>
+          <span class="arrow">→</span>
+          <div class="node" data-txt="Arachidonic acid is the substrate for prostaglandin synthesis." data-t="Arachidonic acid">Arachidonic acid</div>
+          <span class="arrow">→</span>
+          <div class="node blocked" data-txt="NSAIDs and aspirin inhibit cyclooxygenase (COX), the enzyme that converts arachidonic acid into prostaglandins." data-t="Cyclooxygenase / COX (blocked by NSAIDs, aspirin)">Cyclooxygenase (COX)</div>
+          <span class="arrow">→</span>
+          <div class="node" data-txt="Prostaglandins are gastroprotective: they raise mucus and bicarbonate output and lower acid secretion. Cut this pathway, and peptic ulceration follows." data-t="Prostaglandin → gastroprotection">Prostaglandin</div>
+        </div>
+        <div class="reveal-box" id="drugReveal">Select a step to read what it does.</div>
+      </div>
+
+      <div class="diagram-block">
+        <h3>How H. pylori actually damages the mucosa</h3>
+        <div class="hint">click each mechanism</div>
+        <div class="stepper" id="hpSteps">
+          <div class="step on" data-i="0"><span class="num">1</span>Cytokine-driven inflammation</div>
+          <div class="step" data-i="1"><span class="num">2</span>Direct toxin damage</div>
+          <div class="step" data-i="2"><span class="num">3</span>Acid–bicarbonate imbalance</div>
+          <div class="step" data-i="3"><span class="num">4</span>Vascular occlusion</div>
+        </div>
+        <div class="reveal-box" id="hpReveal"></div>
+      </div>
+
+      <div class="diagram-block">
+        <h3>Barrett's esophagus: the road to adenocarcinoma</h3>
+        <div class="hint">click each stage</div>
+        <div class="stepper" id="barrettSteps">
+          <div class="step on" data-i="0"><span class="num">1</span>Chronic reflux</div>
+          <div class="step" data-i="1"><span class="num">2</span>Barrett epithelium</div>
+          <div class="step" data-i="2"><span class="num">3</span>Dysplasia</div>
+          <div class="step" data-i="3"><span class="num">4</span>Carcinoma in situ</div>
+          <div class="step" data-i="4"><span class="num">5</span>Adenocarcinoma</div>
+        </div>
+        <div class="reveal-box" id="barrettReveal"></div>
+      </div>
+
+      <div class="diagram-block">
+        <h3>Crohn's disease vs. ulcerative colitis</h3>
+        <div class="hint">click a row to compare</div>
+        <table class="cmp" id="cmpTable">
+          <thead><tr><th>Feature</th><th>Crohn's disease</th><th>Ulcerative colitis</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <div class="reveal-box" id="cmpReveal">Select a feature to see why it differs.</div>
+      </div>
+
+      <div class="diagram-block">
+        <h3>Small intestinal obstruction: what's blocking it</h3>
+        <div class="hint">click a cause</div>
+        <div class="balance-wrap">
+          <div class="balance-col" style="flex:2;">
+            <span class="chip def" data-txt="A defect in the peritoneal wall lets a loop of bowel protrude into a hernia sac, where it can become trapped and obstructed.">Hernia</span>
+            <span class="chip def" data-txt="Fibrous bands from prior surgery or inflammation can kink or trap a loop of bowel.">Adhesions</span>
+            <span class="chip def" data-txt="One segment of bowel telescopes into the segment immediately ahead of it, blocking the lumen.">Intussusception</span>
+            <span class="chip def" data-txt="A loop of bowel twists on its mesentery, obstructing the lumen and choking off its own blood supply.">Volvulus</span>
+            <span class="chip aggr" data-txt="Tumors and vascular infarction account for a smaller share (about 20%) of obstruction, more often outside the four mechanical causes above.">Tumor / infarction</span>
+          </div>
+        </div>
+        <div class="reveal-box" id="obsReveal">About 80% of small-bowel obstruction comes from the four mechanical causes on the left; select one.</div>
+      </div>
+    </section>
+
+    <!-- ============ MINI MAP ============ -->
+    <section class="pane" id="minimap">
+      <div class="intro">
+        <h2>Every topic, one tap away</h2>
+        <p class="lede">Click a title on the left. The full note opens on the right.</p>
+      </div>
+      <div class="mm-wrap">
+        <div class="mm-list" id="mmList"></div>
+        <div class="mm-panel" id="mmPanel">
+          <p class="mm-empty">Choose a topic to read its notes here.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FLASHCARDS ============ -->
+    <section class="pane" id="flashcards">
+      <div class="intro">
+        <h2>Flash cards</h2>
+        <p class="lede">Tap a card to flip it. Shuffle when you want a fresh order.</p>
+      </div>
+      <div class="level-toolbar">
+        <span class="level-label">Difficulty</span>
+        <button class="level-btn active" data-level="easy" data-target="fc">Level 1 · Easy (60)</button>
+        <button class="level-btn" data-level="medium" data-target="fc">Level 2 · Medium (50)</button>
+        <button class="level-btn" data-level="hard" data-target="fc">Level 3 · Hard (40)</button>
+      </div>
+      <div class="fc-toolbar">
+        <button class="btn" id="shuffleBtn">Shuffle deck</button>
+        <button class="btn ghost" id="flipAllBtn">Flip all</button>
+        <span class="count" id="fcCount"></span>
+      </div>
+      <div class="fc-grid" id="fcGrid"></div>
+    </section>
+
+    <!-- ============ QUIZ ============ -->
+    <section class="pane" id="quiz">
+      <div class="intro">
+        <h2>Quiz bank</h2>
+        <p class="lede">Answer positions are shuffled fresh every time you load the page.</p>
+      </div>
+      <div class="level-toolbar">
+        <span class="level-label">Difficulty</span>
+        <button class="level-btn active" data-level="easy" data-target="quiz">Level 1 · Easy (60)</button>
+        <button class="level-btn" data-level="medium" data-target="quiz">Level 2 · Medium (50)</button>
+        <button class="level-btn" data-level="hard" data-target="quiz">Level 3 · Hard (40)</button>
+      </div>
+      <div class="quiz-toolbar">
+        <div class="score">Score: <b id="scoreVal">0</b> / <span id="scoreTotal">0</span></div>
+        <button class="btn ghost" id="resetQuizBtn">Reset quiz</button>
+      </div>
+      <div id="quizList"></div>
+    </section>
+
+  </main>
+</div>
+
+<footer>© Anmar Taha. All rights reserved.</footer>
+
+<script>
+/* ===================== TAB NAVIGATION ===================== */
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.pane).classList.add('active');
+  });
+});
+
+/* ===================== SHARED CONTENT DATA ===================== */
+const topics = [
+  {
+    title:"Stomatitis & aphthous ulcers",
+    laws:[
+      "Stomatitis = inflammation of the oral mucous membrane; occurs in the course of several different diseases.",
+      "<b>Aphthous ulcers</b> are the commonest form of oral ulceration.",
+      "Painful oral ulcers, <b>1 cm or more</b> in size.",
+      "Causes: unknown, emotional stress, allergy, hormonal imbalance, nutritional deficiency, GI disturbance, trauma."
+    ],
+    text:"Stomatitis is inflammation of the mucous membrane of the mouth and can occur in the course of several different underlying diseases. The commonest form of oral ulceration is the aphthous ulcer: a painful ulcer, 1 cm or more in size. The cause is often unknown, but recognized contributors include emotional stress, allergy, hormonal imbalance, nutritional deficiencies, gastrointestinal disturbances, and trauma."
+  },
+  {
+    title:"Oral fungal infections & terminology",
+    laws:[
+      "Fungal infections commonly involving oral mucosa: <b>candidiasis</b> and <b>actinomycosis</b>.",
+      "Glossitis = inflammation of the tongue.",
+      "Gingivitis = inflammation of the gums.",
+      "Pharyngitis = inflammation of the back of the mouth/throat."
+    ],
+    text:"The fungal infections that most commonly involve the oral mucosa are candidiasis and actinomycosis. A short vocabulary is worth memorizing: inflammation of the tongue is glossitis, inflammation of the gums is gingivitis, and inflammation of the back of the mouth is pharyngitis."
+  },
+  {
+    title:"Esophagitis & GERD",
+    laws:[
+      "Esophagitis occurs most commonly from <b>reflux</b> (GERD), though infections and other conditions can also cause it.",
+      "Reflux can happen in normal healthy people after heavy meals and in early pregnancy.",
+      "Disease occurs when reflux becomes <b>excessive</b>, inflaming the lower esophagus.",
+      "Predisposing conditions: sliding hiatus hernia, chronic gastric/duodenal ulcer, NG intubation, persistent vomiting, CNS depressants (alcohol).",
+      "The action of <b>gastric juice</b> is vital to the development of esophageal mucosal injury."
+    ],
+    text:"Inflammation of the esophagus (esophagitis) occurs most commonly from reflux, although other clinical conditions and infections can also cause it. Reflux (peptic) esophagitis / GERD is the single most important cause: it is associated with reflux of gastric juice into the lower esophagus. Gastro-esophageal reflux can occur in normal healthy individuals after heavy meals and in early pregnancy, but disease occurs when the reflux becomes excessive, resulting in inflammation of the lower esophagus. Predisposing conditions include sliding hiatus hernia, chronic gastric and duodenal ulcers, nasogastric intubation, persistent vomiting, and central nervous system depressants such as alcohol. The action of gastric juice itself is vital to the development of the resulting mucosal injury."
+  },
+  {
+    title:"Barrett's esophagus",
+    laws:[
+      "Definition: stratified squamous epithelium of the lower esophagus replaced by <b>columnar epithelium</b> (columnar metaplasia) following reflux esophagitis.",
+      "Seen more commonly in <b>old age</b>; caused by factors producing GERD.",
+      "It is a <b>premalignant</b> condition.",
+      "Sequence: Barrett epithelium (columnar metaplasia with goblet cells) → dysplasia → carcinoma in situ → <b>esophageal adenocarcinoma</b>.",
+      "Pathogenesis: a change in the differentiation program of the esophageal mucosal stem cell (intestinal metaplasia with goblet cells)."
+    ],
+    text:"Barrett's esophagus is a condition in which, following reflux esophagitis, the stratified squamous epithelium of the lower esophagus is replaced by columnar epithelium (columnar metaplasia). It is seen more commonly in old age and is caused by the same factors that produce gastro-esophageal reflux disease. Barrett's esophagus is a premalignant condition, evolving sequentially from Barrett's epithelium (columnar metaplasia with goblet cells) to dysplasia, to carcinoma in situ, and finally to esophageal adenocarcinoma. The pathogenesis is thought to involve a change in the differentiation program of the esophageal mucosal stem cell, with the appearance of columnar cells (intestinal metaplasia) plus goblet cells."
+  },
+  {
+    title:"Gastritis (acute & chronic)",
+    laws:[
+      "Gastritis = inflammation of gastric mucosa; it is a <b>microscopic diagnosis</b>.",
+      "Acute gastritis: neutrophil infiltration. Chronic gastritis: lymphocytic and/or plasma cell infiltration.",
+      "Important because of its link to peptic ulcer and gastric cancer.",
+      "Acute causes: spicy food, alcohol, malnutrition, smoking, bacterial infection (H. pylori, salmonellosis), viral hepatitis, NSAIDs/aspirin/cortisone, severe stress.",
+      "Chronic gastritis: mucosal atrophy and metaplasia; epithelial changes may progress to dysplasia.",
+      "Chronic gastritis causes: recurrent acute gastritis, <b>H. pylori</b> (most important), excessive alcohol, heavy smoking, autoimmune disease.",
+      "Chronic gastritis histology: intestinal metaplasia, atrophy (loss of glands & parietal cells), dysplasia that may progress to carcinoma."
+    ],
+    text:"Gastritis is inflammation of the gastric mucosa and is fundamentally a microscopic diagnosis. There are two types: acute gastritis, marked by neutrophil infiltration, and chronic gastritis, marked by lymphocytic and/or plasma cell infiltration. The condition matters because of its relationship with peptic ulcer and gastric cancer. Acute gastritis is a transient inflammatory process mainly involving the mucosa, driven by diet and habits (spicy food, alcohol, malnutrition, smoking), infections (bacterial, e.g. H. pylori and salmonellosis; viral, e.g. hepatitis), drugs (NSAIDs, aspirin, cortisone), and physical or chemical stress. Chronic gastritis is chronic inflammation with mucosal atrophy and metaplasia, and the epithelial changes may progress to dysplasia. Recurrent attacks of acute gastritis can lead to chronic gastritis, but the dominant cause is H. pylori infection, which damages epithelial cells directly (urease, vacuolating toxin, proteases, phospholipases) and stimulates pro-inflammatory cytokines. Excessive alcohol, heavy smoking, and autoimmune disease are additional causes. Histologically, chronic gastritis shows intestinal metaplasia and atrophy from loss of mucosal glands and parietal cells, with dysplasia that may progress to carcinoma."
+  },
+  {
+    title:"Peptic ulcer: definition & sites",
+    laws:[
+      "An ulcer = a breach in the mucosa extending to the submucosa or deeper (an erosion stays limited to the mucosa).",
+      "Peptic ulcers are areas of degeneration/necrosis of GI mucosa exposed to acid-peptic secretions.",
+      "98–99% occur in the <b>duodenum</b> or the <b>gastric antrum</b> (usually along the lesser curvature).",
+      "Three normal protective mechanisms: protective mucous layer, good blood supply, rapid epithelial turnover."
+    ],
+    text:"An ulcer is defined as a breach in the mucosa of the alimentary tract that extends to the submucosa or deeper; this distinguishes it from an erosion, which is limited to the mucosa and does not extend to the submucosa. Peptic ulcers are areas of degeneration and necrosis of gastrointestinal mucosa exposed to acid-peptic secretions. Though they can occur anywhere exposed to hydrochloric acid and pepsin, 98-99% occur in either the upper duodenum or the stomach (usually the antrum, along the lesser curvature). Normally, three protective mechanisms guard against self-digestion: a protective mucous layer, a good blood supply, and rapid turnover of epithelial cells."
+  },
+  {
+    title:"Peptic ulcer: pathogenesis",
+    laws:[
+      "Ulceration occurs when the balance between mucosal defenses and damaging forces (acid, pepsin) is disrupted.",
+      "H. pylori is present in virtually <b>all</b> duodenal ulcer patients and about <b>70%</b> of gastric ulcer patients.",
+      "H. pylori mechanisms: pro-inflammatory cytokines (IL-8) activating neutrophils; urease converts NH4→NH3 (toxic); proteases and phospholipases damage epithelium directly; enhanced acid secretion + impaired duodenal bicarbonate; platelet-activating factor causes capillary thrombosis.",
+      "Zollinger-Ellison syndrome: a gastrin-secreting tumor (gastrinoma) or islet-cell hyperplasia causes acid hypersecretion and recurrent ulcers.",
+      "NSAIDs suppress mucosal prostaglandin synthesis (via COX inhibition); aspirin is also a direct irritant.",
+      "Corticosteroids block phospholipase A2, upstream of prostaglandin synthesis."
+    ],
+    text:"Mucosal injury and, thus, peptic ulcer occur when the physiological balance between gastric acid secretion and gastro-duodenal mucosal defense is disrupted, allowing back-diffusion of hydrogen ions and epithelial injury. H. pylori infection is a major factor: it is present in virtually all patients with duodenal ulcer and in about 70% of those with gastric ulcer. It acts through several mechanisms — inducing an intense inflammatory and immune response (pro-inflammatory cytokines such as IL-8 activating neutrophils), producing direct cell injury via a vacuolating toxin and urease (which converts ammonium to ammonia, toxic to the mucosa), proteases and phospholipases that damage epithelium directly, enhancing gastric acid secretion while impairing duodenal bicarbonate production (lowering luminal pH), and provoking thrombotic occlusion of surface capillaries via bacterial platelet-activating factor. Other contributing factors include Zollinger-Ellison syndrome, in which a gastrin-secreting tumor (gastrinoma) or islet-cell hyperplasia causes gastric acid hypersecretion and recurrent ulcers, and chronic NSAID use, which suppresses mucosal prostaglandin synthesis by inhibiting cyclooxygenase; aspirin also acts as a direct mucosal irritant. Corticosteroids contribute by inhibiting phospholipase A2, upstream in the same protective pathway."
+  },
+  {
+    title:"Peptic ulcer: symptoms, complications, treatment",
+    laws:[
+      "Most common symptom: <b>burning stomach pain</b>.",
+      "Other symptoms: fullness/bloating/belching, fatty food intolerance, heartburn, nausea. Many patients are asymptomatic.",
+      "Complications: <b>internal bleeding</b> (most common), perforation, penetration, obstruction.",
+      "Treatment: proton pump inhibitors (omeprazole, lansoprazole) and H2-receptor antagonists (famotidine, ranitidine) to slow acid secretion."
+    ],
+    text:"The most common peptic ulcer symptom is burning stomach pain, alongside a feeling of fullness, bloating or belching, intolerance to fatty foods, heartburn, and nausea — though many people with peptic ulcers are entirely asymptomatic. Internal bleeding is the most common complication of stomach ulcers, followed by perforation and by penetration or obstruction. Treatment centers on slowing acid secretion, using proton pump inhibitors such as omeprazole and lansoprazole, and histamine H2-receptor antagonists such as famotidine and ranitidine."
+  },
+  {
+    title:"Malabsorption syndrome",
+    laws:[
+      "Impaired intestinal absorption of nutrients, especially fat (also protein, carbohydrate, vitamins, minerals).",
+      "Most common presentation: chronic diarrhea.",
+      "Hallmark sign: <b>steatorrhea</b> — bulky, frothy, greasy-yellow stools.",
+      "Primary MAS: due to primary deficiency of the absorptive mucosal surface and its enzymes.",
+      "Secondary MAS: mucosal changes secondary to other factors — disease, surgery, trauma, drugs."
+    ],
+    text:"Malabsorption is characterized by impaired intestinal absorption of nutrients, especially fat, along with other substances such as proteins, carbohydrates, vitamins, and minerals. It can affect many organ systems; the most common clinical presentation is chronic diarrhea, and the hallmark of malabsorption is steatorrhea — the passage of abnormally bulky, frothy, greasy-yellow stools. Primary malabsorption syndrome results from a primary deficiency of the absorptive mucosal surface and its associated enzymes, while secondary malabsorption syndrome arises from mucosal changes that are secondary to other factors, such as disease, surgery, trauma, and drugs."
+  },
+  {
+    title:"Celiac disease",
+    laws:[
+      "A chronic disease triggered by eating <b>gluten</b> (gluten-sensitive enteropathy).",
+      "Gluten = a protein in wheat, barley, and other grains.",
+      "Characteristic mucosal lesion of the small intestine with impaired nutrient absorption.",
+      "Improves with <b>withdrawal of gluten</b> from the diet.",
+      "Pathogenesis: gliadin (a gluten component) is broken down by <b>tissue transglutaminase</b>; resulting peptides are recognized by CD4+ T cells (with CD8+ T cells also accumulating), triggering interferon secretion and enterocyte damage.",
+      "Involves interaction of environmental, genetic, and immunologic factors."
+    ],
+    text:"Celiac disease is a chronic disease triggered by eating gluten, also known as gluten-sensitive enteropathy. Gluten is a protein found in wheat, barley, and other grains. There is a characteristic mucosal lesion of the small intestine with impaired nutrient absorption, which improves on withdrawal of wheat gluten from the diet. The pathogenesis involves interaction between environmental, genetic, and immunologic factors: there is sensitivity to a gluten component called gliadin. When the small intestine is exposed to gluten, it accumulates CD8+ and CD4+ T cells; gliadin is broken down by the enzyme tissue transglutaminase into peptides that are recognized by CD4+ T cells, which secrete interferon and lead to damage of the enterocyte."
+  },
+  {
+    title:"Inflammatory bowel disease — overview",
+    laws:[
+      "Two disorders: <b>Crohn's disease (CD)</b> and <b>ulcerative colitis (UC)</b>.",
+      "Both are chronic, inflammatory disorders of obscure (idiopathic) origin.",
+      "Both exhibit extra-intestinal inflammatory manifestations.",
+      "Shared symptoms: diarrhea, rectal bleeding, abdominal pain, fatigue, weight loss.",
+      "Mechanism: disrupted mucosal immune homeostasis → strong immune response against normal flora; epithelial barrier defect lets flora reach intestinal lymphoid tissue.",
+      "CD reflects a TH1 / interferon-gamma delayed-type hypersensitivity response (supported by granulomas). UC reflects excessive TH2 activation."
+    ],
+    text:"The two disorders known as inflammatory bowel disease (IBD) are Crohn's disease and ulcerative colitis. They have distinctly different clinical and pathological features, but both are chronic inflammatory disorders of obscure (idiopathic) origin, and both exhibit extra-intestinal inflammatory manifestations. Both usually present with diarrhea, rectal bleeding, abdominal pain, fatigue, and weight loss. Normally the mucosal immune system is ready to respond to ingested pathogens but stays unresponsive to normal flora; in IBD this homeostasis is disrupted, producing a strong immune response against normal flora, and an epithelial barrier defect lets microflora reach the lymphoid tissue of the intestine. Crohn's disease results from a delayed-type hypersensitivity reaction driven by interferon-gamma-producing TH1 cells, supported by the presence of granulomas in the lesions, while ulcerative colitis is caused by excessive activation of TH2 cells."
+  },
+  {
+    title:"Crohn's disease",
+    laws:[
+      "Autoimmune disease that may affect any part of the GI tract, mouth to anus — most often the distal small intestine and colon.",
+      "Pathology: segmental and <b>transmural</b> inflammation with mucosal damage.",
+      "Non-caseating granulomas and deep fissures → fistula formation.",
+      "Clinically: intermittent attacks of diarrhea, fever, abdominal pain between asymptomatic periods; colonic involvement can cause anemia from blood loss.",
+      "Extra-intestinal manifestations: arthritis, erythema nodosum, renal disorders.",
+      "Treatment: dietary/nutrition therapy, antidiarrheals, 5-ASA and antibiotics (mild/moderate), corticosteroids (severe), drainage of abscess/fistula, surgery."
+    ],
+    text:"Crohn's disease is an autoimmune disease that may affect any portion of the gastrointestinal tract from mouth to anus, but most often involves the distal small intestine and colon. Its pathological features are segmental and transmural involvement by the inflammatory process, with mucosal damage, and the presence of non-caseating granulomas with deep fissures that lead to fistula formation. Clinically it begins with intermittent attacks of diarrhea, fever, and abdominal pain, spaced by asymptomatic periods; in those with colonic involvement, chronic fecal blood loss leads to anemia. Extra-intestinal manifestations include arthritis, erythema nodosum, and renal disorders. Treatment includes dietary management, nutrition therapy (feeding tube or intravenous), antidiarrheals such as loperamide, 5-aminosalicylic acid and antibiotics for mild-to-moderate disease, corticosteroids for severe disease, drainage of abscesses and fistulas with antibiotics, and surgery."
+  },
+  {
+    title:"Ulcerative colitis",
+    laws:[
+      "Chronic ulcero-inflammatory disease limited to the <b>colon and rectum</b>, affecting only mucosa and submucosa.",
+      "Well-formed granulomas are <b>absent</b> (unlike Crohn's).",
+      "A systemic disorder: associated with arthritis, hepatic involvement, and skin lesions.",
+      "Differs pathologically from CD: no granulomas; ulcers rarely extend below submucosa; no mural thickening; <b>higher risk</b> of carcinoma.",
+      "Symptoms: diarrhea (10–20/day), bloody mucous stools, cramping abdominal pain.",
+      "Treatment: broad-spectrum antibiotics and steroids, immunosuppressive agents, surgery, antidiarrheals, aminosalicylates, short courses of steroids, dietary change."
+    ],
+    text:"Ulcerative colitis is a chronic ulcero-inflammatory disease limited to the colon and rectum, affecting only the mucosa and submucosa; well-formed granulomas are absent. It is a systemic disorder associated with arthritis, hepatic involvement, and skin lesions. Pathologically it differs from Crohn's disease in that well-formed granulomas are absent, the mucosal ulcers rarely extend below the submucosa so mural thickening does not occur, and there is a higher risk of carcinoma developing. Symptoms include frequent diarrhea (10 to 20 times a day), bloody mucous stools, and cramping abdominal pain. Treatment includes broad-spectrum antibiotics and steroids, immunosuppressive agents, surgery, antidiarrheal medicines, aminosalicylates to relieve inflammation and maintain remission, short courses of steroid medicines to control active disease, and dietary changes."
+  },
+  {
+    title:"Diverticular disease & intestinal obstruction",
+    laws:[
+      "A diverticulum = a blind pouch of the alimentary tract; most common site: <b>left colon (sigmoid colon)</b>.",
+      "The small intestine is most often obstructed, due to its narrow lumen.",
+      "~80% of obstruction is due to: hernia, adhesions, intussusception, volvulus.",
+      "~20% is due to tumors and infarction.",
+      "Intussusception = one bowel segment telescopes into the next. Volvulus = twisting of a bowel loop causing obstruction and infarction."
+    ],
+    text:"A diverticulum is a blind pouch related to the alimentary tract; the most common site is the left side of the colon, with the majority occurring in the sigmoid colon. Regarding intestinal obstruction, the small intestine is most often involved because of its narrow lumen. About 80% of obstruction is due to hernia (protrusion of a loop of bowel through a weakness in the peritoneal wall, forming a hernia sac), adhesions, intussusception (one part of the bowel sliding into the next like a telescope), and volvulus (twisting of a loop of bowel leading to obstruction and infarction). The remaining roughly 20% is due to tumors and infarction."
+  },
+  {
+    title:"Acute appendicitis",
+    laws:[
+      "The most common acute abdominal surgical emergency.",
+      "Associated with luminal obstruction — usually a <b>fecolith</b>, less commonly a gallstone, tumor, or worms.",
+      "Obstruction compresses draining veins → reduced blood flow → ischemic injury → bacterial proliferation and inflammatory edema.",
+      "Untreated: appendix may burst, releasing bacteria into the abdominal cavity.",
+      "Most serious complication: <b>peritonitis</b>.",
+      "Symptoms: right lower abdominal pain, nausea, vomiting, decreased appetite.",
+      "Treatment: surgical removal (appendectomy); antibiotics may be equally effective in select non-ruptured cases."
+    ],
+    text:"Acute appendicitis is the most common acute abdominal surgical emergency. It is associated with obstruction of the appendiceal lumen — usually by a fecolith, and less commonly by a gallstone, a tumor, or worms — which compresses and obstructs the draining veins, reducing blood flow to the appendix. The resulting ischemic injury favors bacterial proliferation with additional inflammatory edema. If left untreated, the appendix may burst, releasing bacteria into the abdominal cavity and increasing the risk of complications; the most serious complication is peritonitis. Symptoms commonly include right lower abdominal pain, nausea, vomiting, and decreased appetite. Treatment for acute appendicitis is surgical removal of the appendix; surgery reduces the risk of complications or death associated with rupture, though antibiotics may be equally effective in certain cases of non-ruptured appendicitis."
+  }
+];
+
+/* ===================== OVERVIEW RENDER ===================== */
+const lawGrid = document.getElementById('lawGrid');
+topics.forEach(t=>{
+  const card = document.createElement('div');
+  card.className = 'law-card';
+  card.innerHTML = `<h3>${t.title}</h3><ul>${t.laws.map(l=>`<li>${l}</li>`).join('')}</ul>`;
+  lawGrid.appendChild(card);
+});
+
+/* ===================== MINI MAP RENDER ===================== */
+const mmList = document.getElementById('mmList');
+const mmPanel = document.getElementById('mmPanel');
+topics.forEach((t,i)=>{
+  const b = document.createElement('button');
+  b.textContent = t.title;
+  b.addEventListener('click', ()=>{
+    mmList.querySelectorAll('button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    mmPanel.innerHTML = `<h3>${t.title}</h3><p>${t.text}</p>`;
+  });
+  mmList.appendChild(b);
+});
+
+/* ===================== DIAGRAM INTERACTIONS ===================== */
+// balance widget
+document.querySelectorAll('.balance-wrap .chip').forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    const wrap = chip.closest('.diagram-block');
+    wrap.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+    chip.classList.add('on');
+    const box = wrap.querySelector('.reveal-box');
+    box.textContent = chip.dataset.txt;
+  });
+});
+
+// drug flow
+document.querySelectorAll('#drugFlow .node').forEach(node=>{
+  node.addEventListener('click', ()=>{
+    document.getElementById('drugReveal').textContent = node.dataset.t + ' — ' + node.dataset.txt;
+  });
+});
+
+// H. pylori steps
+const hpData = [
+  "H. pylori stimulates mucosal epithelial cells to release pro-inflammatory cytokines such as IL-8, which activate neutrophils that carry out much of the tissue damage.",
+  "Bacterial products injure cells directly: a vacuolating toxin, urease (which converts NH4 to the mucosa-toxic NH3), proteases, and phospholipases that damage the epithelium.",
+  "H. pylori enhances gastric acid secretion while impairing duodenal bicarbonate production, lowering luminal pH and damaging duodenal mucosa.",
+  "Bacterial platelet-activating factor provokes thrombotic occlusion of surface capillaries, and the bacteria themselves adhere to the GI surface."
+];
+const hpSteps = document.querySelectorAll('#hpSteps .step');
+function showHp(i){
+  hpSteps.forEach(s=>s.classList.remove('on'));
+  hpSteps[i].classList.add('on');
+  document.getElementById('hpReveal').textContent = hpData[i];
+}
+hpSteps.forEach(s=>s.addEventListener('click', ()=>showHp(+s.dataset.i)));
+showHp(0);
+
+// Barrett stepper
+const barrettData = [
+  "Chronic gastro-esophageal reflux repeatedly exposes the lower esophagus to acid and bile, injuring the squamous epithelium.",
+  "The stratified squamous epithelium is replaced by columnar epithelium with goblet cells (intestinal metaplasia) — this is Barrett's epithelium itself.",
+  "Ongoing injury drives dysplastic change in the metaplastic epithelium — an intermediate, still-reversible step.",
+  "Dysplasia progresses to carcinoma in situ: malignant cells confined to the epithelium, not yet invasive.",
+  "Invasion follows, producing esophageal adenocarcinoma — the endpoint of the Barrett's sequence."
+];
+const barrettSteps = document.querySelectorAll('#barrettSteps .step');
+function showBarrett(i){
+  barrettSteps.forEach(s=>s.classList.remove('on'));
+  barrettSteps[i].classList.add('on');
+  document.getElementById('barrettReveal').textContent = barrettData[i];
+}
+barrettSteps.forEach(s=>s.addEventListener('click', ()=>showBarrett(+s.dataset.i)));
+showBarrett(0);
+
+// obstruction chips (reuse balance-wrap handler above already covers it since same class)
+
+// CD vs UC table
+const cmpRows = [
+  {feat:"Site", cd:"Mouth to anus (any part of GIT)", uc:"Rectum always involved, may extend to whole colon", note:"Crohn's is discontinuous and can strike anywhere in the tract; UC starts in the rectum and spreads proximally without skipping."},
+  {feat:"Depth of inflammation", cd:"Transmural (all layers)", uc:"Mucosa and submucosa only", note:"This single difference explains why Crohn's forms fistulas and strictures while UC does not."},
+  {feat:"Granulomas", cd:"Non-caseating, in ~50–60% of cases", uc:"Absent", note:"Granulomas reflect the TH1-driven delayed hypersensitivity typical of Crohn's disease."},
+  {feat:"Fistulas", cd:"Common", uc:"Uncommon", note:"Deep transmural fissures in Crohn's disease tunnel through the bowel wall to form fistulas."},
+  {feat:"Fibrosis / wall thickening", cd:"Marked, wall thickened", uc:"Mild, wall stays thin", note:"Transmural inflammation and repeated healing thicken the Crohn's bowel wall; UC spares the deeper layers."},
+  {feat:"Risk of malignant transformation", cd:"Very rare", uc:"About 5%, more common", note:"Long-standing UC carries a clearer, better-established colorectal cancer risk than Crohn's."},
+];
+const cmpBody = document.querySelector('#cmpTable tbody');
+cmpRows.forEach((r,i)=>{
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td class="feat">${r.feat}</td><td>${r.cd}</td><td>${r.uc}</td>`;
+  tr.addEventListener('click', ()=>{
+    cmpBody.querySelectorAll('tr').forEach(x=>x.classList.remove('on'));
+    tr.classList.add('on');
+    document.getElementById('cmpReveal').textContent = r.note;
+  });
+  cmpBody.appendChild(tr);
+});
+
+const flashcardsByLevel = {
+  "easy": [
+    {
+      "q": "Name the common symptoms of digestive tract disease.",
+      "a": "Bleeding, bloating, constipation, diarrhea, heartburn, nausea and vomiting, and abdominal pain."
+    },
+    {
+      "q": "What is stomatitis?",
+      "a": "Inflammation of the mucous membrane of the mouth."
+    },
+    {
+      "q": "What is the commonest form of oral ulceration?",
+      "a": "Aphthous ulcers."
+    },
+    {
+      "q": "What is the minimum size of an aphthous ulcer?",
+      "a": "1 cm or more."
+    },
+    {
+      "q": "Name two fungal (mycotic) infections that commonly involve the oral mucosa.",
+      "a": "Candidiasis and actinomycosis."
+    },
+    {
+      "q": "What is glossitis?",
+      "a": "Inflammation of the tongue."
+    },
+    {
+      "q": "What is gingivitis?",
+      "a": "Inflammation of the gums."
+    },
+    {
+      "q": "What is pharyngitis?",
+      "a": "Inflammation of the back of the mouth."
+    },
+    {
+      "q": "What is esophagitis?",
+      "a": "Inflammation of the esophagus."
+    },
+    {
+      "q": "What is the most common cause of esophagitis?",
+      "a": "Gastro-esophageal reflux (GERD)."
+    },
+    {
+      "q": "What does GERD stand for?",
+      "a": "Gastro-esophageal reflux disease."
+    },
+    {
+      "q": "In reflux esophagitis, what refluxes into the lower esophagus?",
+      "a": "Gastric juice."
+    },
+    {
+      "q": "Name one normal situation in which reflux occurs in healthy people.",
+      "a": "After heavy meals (or in early pregnancy)."
+    },
+    {
+      "q": "Name a condition that predisposes to reflux esophagitis.",
+      "a": "Sliding hiatus hernia (also chronic peptic ulcer, NG intubation, persistent vomiting, alcohol)."
+    },
+    {
+      "q": "What is described as vital to the development of esophageal mucosal injury in reflux?",
+      "a": "The action of gastric juice."
+    },
+    {
+      "q": "What is Barrett's esophagus?",
+      "a": "Replacement of the lower esophageal squamous epithelium by columnar epithelium following reflux esophagitis."
+    },
+    {
+      "q": "In which age group is Barrett's esophagus seen more commonly?",
+      "a": "Old age."
+    },
+    {
+      "q": "Is Barrett's esophagus a premalignant condition?",
+      "a": "Yes."
+    },
+    {
+      "q": "What is the final malignant outcome of Barrett's esophagus?",
+      "a": "Esophageal adenocarcinoma."
+    },
+    {
+      "q": "What is gastritis?",
+      "a": "Inflammation of the gastric mucosa."
+    },
+    {
+      "q": "How is gastritis diagnosed?",
+      "a": "Microscopically — it is a histological diagnosis."
+    },
+    {
+      "q": "What inflammatory cells characterize acute gastritis?",
+      "a": "Neutrophils."
+    },
+    {
+      "q": "What inflammatory cells characterize chronic gastritis?",
+      "a": "Lymphocytes and/or plasma cells."
+    },
+    {
+      "q": "Name one dietary/personal-habit cause of acute gastritis.",
+      "a": "Highly spiced food (also alcohol, malnutrition, heavy smoking)."
+    },
+    {
+      "q": "Name one bacterial cause of acute gastritis.",
+      "a": "Helicobacter pylori (also salmonellosis)."
+    },
+    {
+      "q": "Name one drug that can cause acute gastritis.",
+      "a": "NSAIDs (also aspirin, cortisone)."
+    },
+    {
+      "q": "What is the most common cause of chronic gastritis?",
+      "a": "Helicobacter pylori infection."
+    },
+    {
+      "q": "How is a peptic ulcer defined?",
+      "a": "A breach in the mucosa of the alimentary tract that extends to the submucosa or deeper."
+    },
+    {
+      "q": "How does an erosion differ from an ulcer?",
+      "a": "An erosion is limited to the mucosa and does not extend to the submucosa."
+    },
+    {
+      "q": "In what percentage of cases do peptic ulcers occur in the duodenum or stomach?",
+      "a": "98–99%."
+    },
+    {
+      "q": "Where exactly in the stomach do peptic ulcers usually occur?",
+      "a": "The antrum, along the lesser curvature."
+    },
+    {
+      "q": "Name the three normal protective mechanisms of the gastric mucosa.",
+      "a": "Protective mucous layer, good blood supply, and rapid epithelial cell turnover."
+    },
+    {
+      "q": "What organism is described as a major factor in peptic ulcer pathogenesis?",
+      "a": "Helicobacter pylori."
+    },
+    {
+      "q": "In what percentage of gastric ulcer patients is H. pylori found?",
+      "a": "About 70%."
+    },
+    {
+      "q": "What syndrome is caused by a gastrin-secreting tumor?",
+      "a": "Zollinger-Ellison syndrome."
+    },
+    {
+      "q": "What are gastrin-secreting tumors called?",
+      "a": "Gastrinomas."
+    },
+    {
+      "q": "What is the most common acute abdominal surgical emergency?",
+      "a": "Acute appendicitis."
+    },
+    {
+      "q": "What is the most common symptom of peptic ulcer disease?",
+      "a": "Burning stomach pain."
+    },
+    {
+      "q": "What is the most common cause of luminal obstruction in acute appendicitis?",
+      "a": "A fecolith."
+    },
+    {
+      "q": "What are the classic symptoms of acute appendicitis?",
+      "a": "Right lower abdominal pain, nausea, vomiting, and decreased appetite."
+    },
+    {
+      "q": "What is the most common complication of peptic ulcer?",
+      "a": "Internal bleeding."
+    },
+    {
+      "q": "Name two other complications of peptic ulcer besides bleeding.",
+      "a": "Perforation, and penetration or obstruction."
+    },
+    {
+      "q": "Which two drug classes are used to slow acid secretion in peptic ulcer treatment?",
+      "a": "Proton pump inhibitors (e.g. omeprazole, lansoprazole) and H2-receptor antagonists (e.g. famotidine, ranitidine)."
+    },
+    {
+      "q": "What is the hallmark clinical feature of malabsorption syndrome?",
+      "a": "Steatorrhea."
+    },
+    {
+      "q": "Describe the stool in steatorrhea.",
+      "a": "Bulky, frothy, greasy-yellow stools."
+    },
+    {
+      "q": "What is primary malabsorption syndrome due to?",
+      "a": "Primary deficiency of the absorptive mucosal surface and its associated enzymes."
+    },
+    {
+      "q": "What is secondary malabsorption syndrome due to?",
+      "a": "Other factors such as diseases, surgery, trauma, and drugs."
+    },
+    {
+      "q": "What triggers celiac disease?",
+      "a": "Eating gluten."
+    },
+    {
+      "q": "What is another name for celiac disease?",
+      "a": "Gluten-sensitive enteropathy."
+    },
+    {
+      "q": "In which foods is gluten found?",
+      "a": "Wheat, barley, and other grains."
+    },
+    {
+      "q": "How does celiac disease improve?",
+      "a": "With withdrawal of gluten from the diet."
+    },
+    {
+      "q": "Name the two main inflammatory bowel diseases.",
+      "a": "Crohn's disease and ulcerative colitis."
+    },
+    {
+      "q": "Name a symptom common to both Crohn's disease and ulcerative colitis.",
+      "a": "Diarrhea (also rectal bleeding, abdominal pain, fatigue, weight loss)."
+    },
+    {
+      "q": "Which IBD can affect any part of the GI tract from mouth to anus?",
+      "a": "Crohn's disease."
+    },
+    {
+      "q": "Which layers of the bowel wall does Crohn's disease affect?",
+      "a": "All layers (transmural)."
+    },
+    {
+      "q": "Which layers does ulcerative colitis affect?",
+      "a": "Only the mucosa and submucosa."
+    },
+    {
+      "q": "Which IBD is characterized by non-caseating granulomas?",
+      "a": "Crohn's disease."
+    },
+    {
+      "q": "Which part of the colon is always involved in ulcerative colitis?",
+      "a": "The rectum."
+    },
+    {
+      "q": "What is the most common site of diverticular disease?",
+      "a": "The sigmoid colon (left colon)."
+    },
+    {
+      "q": "Why is the small intestine the most common site of intestinal obstruction?",
+      "a": "Because of its narrow lumen."
+    }
+  ],
+  "medium": [
+    {
+      "q": "Why can gastro-esophageal reflux occur even in healthy people?",
+      "a": "Because it can occur physiologically after heavy meals and in early pregnancy without necessarily causing disease."
+    },
+    {
+      "q": "Besides hiatal hernia, name two other conditions predisposing to reflux esophagitis.",
+      "a": "Nasogastric intubation and persistent vomiting (also chronic gastric/duodenal ulcers, CNS depressants like alcohol)."
+    },
+    {
+      "q": "What is the sequence of epithelial change from Barrett's esophagus to cancer?",
+      "a": "Barrett's epithelium (columnar metaplasia with goblet cells) → dysplasia → carcinoma in situ → esophageal adenocarcinoma."
+    },
+    {
+      "q": "What is the proposed pathogenesis of Barrett's esophagus at the cellular level?",
+      "a": "A change in the differentiation program of the esophageal mucosal stem cell, producing columnar cells with goblet cells (intestinal metaplasia)."
+    },
+    {
+      "q": "Why is gastritis clinically important beyond causing symptoms?",
+      "a": "Because of its relationship with peptic ulcer disease and gastric cancer."
+    },
+    {
+      "q": "What distinguishes acute from chronic gastritis histologically?",
+      "a": "Acute shows neutrophil infiltration; chronic shows lymphocytic and/or plasma cell infiltration."
+    },
+    {
+      "q": "List the four categories of causes of acute gastritis.",
+      "a": "Diet/personal habits, infections, drugs, and chemical/physical agents (stress)."
+    },
+    {
+      "q": "What may recurrent attacks of acute gastritis lead to?",
+      "a": "Chronic gastritis."
+    },
+    {
+      "q": "Name three mechanisms by which H. pylori damages the mucosa in chronic gastritis.",
+      "a": "Stimulating pro-inflammatory cytokines, and directly damaging epithelial cells via urease, vacuolating toxin, proteases and phospholipases."
+    },
+    {
+      "q": "What is the general mechanism of chronic gastric injury regardless of the cause?",
+      "a": "A cytotoxic effect on the gastric mucosal epithelium, breaking the mucosal barrier and inciting an inflammatory response."
+    },
+    {
+      "q": "What histological progression can chronic gastritis lead to?",
+      "a": "Intestinal metaplasia and glandular/parietal cell atrophy, which may progress through dysplasia to carcinoma."
+    },
+    {
+      "q": "Why must an ulcer be distinguished from an erosion?",
+      "a": "Because an ulcer extends to the submucosa or deeper, while an erosion is limited to the mucosa."
+    },
+    {
+      "q": "What physiological balance, when disrupted, leads to peptic ulcer?",
+      "a": "The balance between gastric acid secretion and gastro-duodenal mucosal defense."
+    },
+    {
+      "q": "How does disruption of mucosal defense lead to epithelial injury?",
+      "a": "Aggressive factors allow back-diffusion of hydrogen ions (increased mucosal permeability to H+), causing epithelial cell injury."
+    },
+    {
+      "q": "Name four ways H. pylori contributes to peptic ulcer pathogenesis.",
+      "a": "Induces an inflammatory/immune response (IL-8, neutrophils); bacterial toxins injure cells (urease, vacuolating toxin, proteases, phospholipases); enhances acid secretion and impairs duodenal bicarbonate; and causes thrombotic occlusion of capillaries via platelet-activating factor."
+    },
+    {
+      "q": "How does H. pylori urease damage the duodenal/gastric mucosa?",
+      "a": "It converts urea to ammonia, which is directly toxic to the mucosa."
+    },
+    {
+      "q": "How does H. pylori affect duodenal bicarbonate and pH?",
+      "a": "It impairs duodenal bicarbonate production, reducing luminal pH and damaging the duodenal mucosa."
+    },
+    {
+      "q": "Explain the mechanism by which Zollinger-Ellison syndrome causes ulcers.",
+      "a": "A gastrin-secreting tumor (gastrinoma) or islet cell hyperplasia overproduces gastrin, causing excessive gastric acid production and recurrent ulcers."
+    },
+    {
+      "q": "Explain the biochemical pathway by which NSAIDs cause ulcers.",
+      "a": "NSAIDs inhibit cyclooxygenase, blocking conversion of arachidonic acid to prostaglandins, reducing the gastroprotective effects of prostaglandins (mucus, bicarbonate, and reduced acid)."
+    },
+    {
+      "q": "At what step do corticosteroids block the prostaglandin pathway compared to NSAIDs?",
+      "a": "Corticosteroids inhibit phospholipase A2 (upstream, blocking arachidonic acid formation), while NSAIDs/aspirin inhibit cyclooxygenase (downstream)."
+    },
+    {
+      "q": "List the aggressive factors that disrupt the gastric mucosal balance.",
+      "a": "H. pylori, alcohol, NSAIDs/stress/smoking, ischemic processes/free radicals, bile reflux, and peptic acid secretion."
+    },
+    {
+      "q": "List the defending factors that protect the gastric mucosa.",
+      "a": "Mucus and bicarbonate, blood flow, nitric oxide/prostaglandins, growth factor and cell renewal, and antioxidant defense."
+    },
+    {
+      "q": "What is the significance of steatorrhea in malabsorption?",
+      "a": "It reflects impaired absorption specifically of fat and is the hallmark clinical sign of malabsorption syndrome."
+    },
+    {
+      "q": "Besides fat, what other nutrients are poorly absorbed in malabsorption syndrome?",
+      "a": "Proteins, carbohydrates, vitamins, and minerals."
+    },
+    {
+      "q": "Give an example of a cause of secondary malabsorption syndrome.",
+      "a": "Surgery, trauma, drugs, or another disease process affecting the mucosa (as opposed to an intrinsic primary enzyme/mucosal deficiency)."
+    },
+    {
+      "q": "What three factors interact in the pathogenesis of celiac disease?",
+      "a": "Environmental, genetic, and immunologic factors."
+    },
+    {
+      "q": "Describe how gliadin causes enterocyte damage in celiac disease.",
+      "a": "Gliadin is broken down by tissue transglutaminase into peptides that are recognized by CD4+ T cells, which secrete interferon, leading to enterocyte damage."
+    },
+    {
+      "q": "Which T-cell types accumulate in the small intestine on gluten exposure in celiac disease?",
+      "a": "CD8+ T cells and also CD4+ T cells."
+    },
+    {
+      "q": "What do Crohn's disease and ulcerative colitis have in common despite their pathological differences?",
+      "a": "Both are chronic inflammatory disorders of obscure origin with extra-intestinal manifestations, and share diarrhea, rectal bleeding, abdominal pain, fatigue and weight loss."
+    },
+    {
+      "q": "In normal gut immune homeostasis, how does the mucosal immune system treat normal flora versus pathogens?",
+      "a": "It stays ready to respond to ingested pathogens but remains unresponsive (tolerant) to normal flora."
+    },
+    {
+      "q": "What two changes disrupt gut immune homeostasis in IBD?",
+      "a": "A strong immune response develops against normal flora, and an epithelial barrier defect allows microflora to reach the intestinal lymphoid tissue."
+    },
+    {
+      "q": "Which T-helper cell subset and cytokine drive Crohn's disease, and what pathological finding supports this?",
+      "a": "TH1 cells producing interferon-gamma (delayed-type hypersensitivity), supported by granuloma formation in the lesions."
+    },
+    {
+      "q": "Which T-helper subset is implicated in ulcerative colitis?",
+      "a": "TH2 cells (excessive activation)."
+    },
+    {
+      "q": "Describe the two key pathological features of Crohn's disease.",
+      "a": "Segmental, transmural inflammation with mucosal damage, and non-caseating granulomas with deep fissures that can form fistulas."
+    },
+    {
+      "q": "What complication can result from the deep fissures of Crohn's disease?",
+      "a": "Fistula formation."
+    },
+    {
+      "q": "Why can Crohn's disease patients with colonic involvement develop anemia?",
+      "a": "Because of chronic fecal blood loss from colonic involvement."
+    },
+    {
+      "q": "Name extra-intestinal manifestations of Crohn's disease.",
+      "a": "Arthritis, erythema nodosum, and renal disorders."
+    },
+    {
+      "q": "Outline the step-up in Crohn's disease drug treatment from mild/moderate to severe.",
+      "a": "Mild/moderate: 5-aminosalicylic acid and antibiotics; severe: corticosteroids; abscesses/fistulas: drainage plus antibiotics; refractory cases: surgery."
+    },
+    {
+      "q": "How does ulcerative colitis differ from Crohn's disease in extent through the bowel wall?",
+      "a": "UC is limited to the mucosa and submucosa, while Crohn's disease is transmural."
+    },
+    {
+      "q": "Name three ways ulcerative colitis differs pathologically from Crohn's disease.",
+      "a": "Well-formed granulomas are absent, mucosal ulcers rarely extend below the submucosa (no mural thickening), and there is a higher risk of carcinoma."
+    },
+    {
+      "q": "Describe the typical bowel habit in active ulcerative colitis.",
+      "a": "Diarrhea 10 to 20 times per day, with bloody mucous stools and cramping abdominal pain."
+    },
+    {
+      "q": "What systemic associations does ulcerative colitis have besides bowel disease?",
+      "a": "Arthritis, hepatic involvement, and skin lesions."
+    },
+    {
+      "q": "How does smoking relate differently to Crohn's disease and ulcerative colitis?",
+      "a": "Crohn's disease is more common in smokers, whereas ulcerative colitis is more common in nonsmokers and ex-smokers."
+    },
+    {
+      "q": "Compare fistula formation and fibrosis between Crohn's disease and ulcerative colitis.",
+      "a": "Fistulas and marked fibrosis are common/characteristic of Crohn's disease, whereas both are less common/mild in ulcerative colitis."
+    },
+    {
+      "q": "Compare colon cancer risk and granuloma frequency between Crohn's disease and ulcerative colitis.",
+      "a": "Colon cancer is more common in UC; non-caseating granulomas occur in about 50–60% of Crohn's disease cases and are absent in UC."
+    },
+    {
+      "q": "What causes most cases of small intestinal obstruction?",
+      "a": "About 80% are due to hernia, adhesions, intussusception, or volvulus (versus about 20% from tumors and infarction)."
+    },
+    {
+      "q": "Explain the mechanism of hernia-related intestinal obstruction.",
+      "a": "A weakness or defect in the peritoneal cavity wall allows protrusion of a pouch-like sac (hernia sac), which can trap and obstruct bowel."
+    },
+    {
+      "q": "Distinguish intussusception from volvulus.",
+      "a": "Intussusception is telescoping of one bowel segment into the next; volvulus is twisting of a loop of bowel, which can cause obstruction and infarction."
+    },
+    {
+      "q": "Explain the pathogenesis of acute appendicitis step by step.",
+      "a": "Luminal obstruction (usually by a fecolith) → compression and obstruction of draining veins → decreased blood flow → ischemic injury → favors bacterial proliferation and inflammatory edema."
+    },
+    {
+      "q": "What happens if acute appendicitis is left untreated, and what is the most serious result?",
+      "a": "The appendix may burst, releasing bacteria into the abdominal cavity, most seriously causing peritonitis."
+    }
+  ],
+  "hard": [
+    {
+      "q": "Explain, at the molecular level, why chronic NSAID use predisposes to peptic ulceration.",
+      "a": "NSAIDs inhibit cyclooxygenase (COX), the enzyme converting arachidonic acid to prostaglandins; this removes prostaglandin-mediated gastroprotection (mucus, bicarbonate secretion, and acid inhibition), tipping the aggressive/defensive balance toward ulceration."
+    },
+    {
+      "q": "Contrast the site of action of corticosteroids and NSAIDs on the arachidonic acid pathway and explain why both cause peptic ulceration.",
+      "a": "Corticosteroids inhibit phospholipase A2 (blocking arachidonic acid release from the plasma membrane), while NSAIDs/aspirin inhibit cyclooxygenase (blocking conversion of arachidonic acid to prostaglandin); both ultimately reduce prostaglandin-driven gastroprotection, leading to peptic ulceration."
+    },
+    {
+      "q": "Integrate the mechanisms by which H. pylori causes peptic ulcer disease into a single pathogenic model.",
+      "a": "H. pylori triggers cytokine-driven inflammation (IL-8, neutrophil activation), directly injures epithelium via urease/vacuolating toxin/proteases/phospholipases, increases acid secretion while impairing duodenal bicarbonate (lowering luminal pH), and causes capillary thrombosis via platelet-activating factor plus mucosal adhesion — collectively overwhelming mucosal defenses."
+    },
+    {
+      "q": "Why is H. pylori considered central to chronic gastritis but not the sole cause?",
+      "a": "Because although H. pylori is strongly and most commonly implicated (via cytokine-driven and toxin-mediated injury), chronic gastritis can also result from recurrent acute gastritis, excessive alcohol/smoking, or autoimmune disease."
+    },
+    {
+      "q": "Explain how the progression of chronic gastritis relates to gastric carcinogenesis.",
+      "a": "Chronic gastritis produces intestinal metaplasia and glandular/parietal cell atrophy, which can progress through dysplasia to carcinoma, linking chronic mucosal injury to malignant transformation."
+    },
+    {
+      "q": "Explain the full stepwise carcinogenic pathway of Barrett's esophagus, including its cellular origin.",
+      "a": "Following reflux esophagitis, a change in the differentiation program of the esophageal mucosal stem cell produces columnar epithelium with goblet cells (Barrett's epithelium), which progresses sequentially through dysplasia and carcinoma in situ to esophageal adenocarcinoma."
+    },
+    {
+      "q": "Why does GERD depend on both the volume of reflux and the properties of the refluxate?",
+      "a": "Because reflux itself can be physiological (after heavy meals, in pregnancy), but esophagitis results when reflux becomes excessive and the acid-peptic action of gastric juice is what is vital to mucosal injury."
+    },
+    {
+      "q": "Compare the pathogenic T-helper responses underlying Crohn's disease and ulcerative colitis, and how each explains a specific pathological finding.",
+      "a": "Crohn's disease reflects a TH1/interferon-gamma-driven delayed-type hypersensitivity response, correlating with non-caseating granuloma formation; ulcerative colitis reflects excessive TH2 activation, consistent with more superficial, continuous mucosal/submucosal inflammation without granulomas."
+    },
+    {
+      "q": "Explain how a defect in intestinal epithelial barrier function contributes to IBD pathogenesis in genetically susceptible individuals.",
+      "a": "Normally the mucosal immune system tolerates commensal flora; in IBD, an epithelial barrier defect lets microflora reach the intestinal lymphoid tissue, triggering an exaggerated, self-perpetuating immune response against normal flora in genetically susceptible people."
+    },
+    {
+      "q": "Explain why Crohn's disease has a high fistula rate whereas ulcerative colitis does not.",
+      "a": "Crohn's disease causes transmural, segmental inflammation with deep fissures that penetrate the full bowel wall thickness, enabling fistula tract formation; ulcerative colitis is confined to the mucosa and submucosa, so it rarely extends deep enough to form fistulas."
+    },
+    {
+      "q": "Explain why ulcerative colitis carries a higher malignancy risk than Crohn's disease despite Crohn's involving deeper tissue layers.",
+      "a": "UC involves continuous, long-standing mucosal inflammation confined to the colon/rectum, which predisposes the colonic epithelium to dysplasia-carcinoma progression more consistently, giving it a higher cumulative colorectal cancer risk than the patchy, transmural involvement of Crohn's disease."
+    },
+    {
+      "q": "Explain the pathogenic link between gliadin, transglutaminase, and enterocyte injury in celiac disease.",
+      "a": "Ingested gliadin is deamidated by tissue transglutaminase, generating immunogenic peptides that are recognized by CD4+ T cells; these cells secrete interferon, driving an immune-mediated attack that damages enterocytes, producing the characteristic mucosal lesion."
+    },
+    {
+      "q": "Why does withdrawal of gluten reverse the mucosal lesion of celiac disease?",
+      "a": "Because the mucosal damage is immune-mediated and driven by ongoing exposure to gliadin; removing the antigenic trigger removes the stimulus for the CD4+ T-cell/interferon-mediated enterocyte injury, allowing mucosal recovery."
+    },
+    {
+      "q": "Explain the pathophysiological chain that links H. pylori urease activity to duodenal mucosal damage.",
+      "a": "Urease converts urea to ammonia (toxic to mucosa) while H. pylori also impairs duodenal bicarbonate secretion; the combination of direct ammonia toxicity and reduced luminal pH buffering damages the duodenal mucosa and promotes ulceration."
+    },
+    {
+      "q": "Explain why peptic ulcer disease is essentially a disease of imbalance between two opposing forces, and name both sides.",
+      "a": "Peptic ulcer results from an imbalance between damaging/aggressive factors (acid, pepsin, H. pylori, NSAIDs) and gastroduodenal mucosal defenses (mucus/bicarbonate layer, blood flow, prostaglandins, epithelial turnover); disease occurs when aggressive forces overwhelm defenses, allowing back-diffusion of H+ and epithelial injury."
+    },
+    {
+      "q": "Distinguish, mechanistically, primary from secondary malabsorption syndrome.",
+      "a": "Primary MAS arises from an intrinsic defect of the absorptive mucosal surface and its associated enzymes, whereas secondary MAS arises when a separate disease process, surgery, trauma, or drug secondarily damages otherwise normal mucosa."
+    },
+    {
+      "q": "Explain how Zollinger-Ellison syndrome produces refractory, recurrent peptic ulcers unlike ordinary H. pylori-related ulcers.",
+      "a": "A gastrinoma (or islet cell hyperplasia) autonomously secretes large amounts of gastrin regardless of normal feedback, causing sustained gastric acid hypersecretion that overwhelms mucosal defenses independent of H. pylori, producing recurrent ulcers resistant to standard therapy."
+    },
+    {
+      "q": "Explain the sequence of events from luminal obstruction to peritonitis in acute appendicitis.",
+      "a": "Luminal obstruction (usually a fecolith) traps secretions, raising intraluminal pressure and compressing draining veins; reduced blood flow causes ischemic injury, which favors bacterial proliferation and inflammatory edema; if untreated, this progresses to necrosis and rupture, releasing bacteria into the peritoneal cavity to cause peritonitis."
+    },
+    {
+      "q": "Why is the small intestine more prone to obstruction than the large intestine according to this material?",
+      "a": "Because of its narrow lumen, which makes it more susceptible to blockage by hernia, adhesions, intussusception, or volvulus (the causes responsible for about 80% of cases)."
+    },
+    {
+      "q": "Compare the microscopic distinguishing features of Crohn's disease and ulcerative colitis regarding granuloma, goblet cells, and inflammatory cell pattern.",
+      "a": "Crohn's disease shows non-caseating granulomas in 50–60% of cases with only slight loss or normal goblet cells and chronic inflammatory cells with lymphoid hyperplasia; ulcerative colitis shows absent granulomas, depleted/distorted goblet cells, and acute plus chronic inflammatory cells in the lamina propria and crypts."
+    },
+    {
+      "q": "Explain why both corticosteroids and chronic alcohol/smoking are risk factors for gastric mucosal injury, even though their mechanisms differ.",
+      "a": "Corticosteroids reduce mucosal protection by blocking prostaglandin synthesis (via phospholipase A2 inhibition), while alcohol and smoking directly injure the mucosa and impair its normal protective/reparative mechanisms; both shift the aggressive-defensive balance toward mucosal damage."
+    },
+    {
+      "q": "What does the presence of non-caseating granulomas in Crohn's disease indicate immunologically?",
+      "a": "It indicates a delayed-type (TH1/interferon-gamma-mediated) hypersensitivity response to luminal antigens, consistent with a chronic, cell-mediated granulomatous reaction rather than acute suppurative inflammation."
+    },
+    {
+      "q": "Why do patients with long-standing ulcerative colitis need closer colorectal cancer surveillance than most Crohn's disease patients?",
+      "a": "Because UC carries a distinctly higher risk of malignant transformation than Crohn's disease, related to its continuous, long-standing mucosal inflammation confined to the colon."
+    },
+    {
+      "q": "Explain why fibrosis and wall thickening are marked in Crohn's disease but not in ulcerative colitis.",
+      "a": "Crohn's disease causes transmural inflammation involving all bowel wall layers, producing a thickened, fibrotic wall, whereas UC inflammation is limited to the mucosa/submucosa with mild fibrosis and a thin wall."
+    },
+    {
+      "q": "Why can bile reflux and ischemic/free-radical processes be considered aggressive factors alongside H. pylori and NSAIDs?",
+      "a": "Because, like H. pylori and NSAIDs, they directly injure the gastric mucosa or impair its defense mechanisms, tipping the balance toward ulceration alongside acid/pepsin secretion."
+    },
+    {
+      "q": "What is the pathophysiological rationale for using PPIs and H2 blockers as first-line peptic ulcer treatment?",
+      "a": "Since peptic ulcer arises from an imbalance favoring acid/pepsin aggression over mucosal defense, reducing gastric acid secretion shifts the balance back toward the defensive side, allowing mucosal healing."
+    },
+    {
+      "q": "Explain why esophagitis is not always due to reflux.",
+      "a": "Esophagitis is classified as an inflammatory lesion of the esophagus that, while most commonly caused by reflux, can also result from various other clinical conditions and infections."
+    },
+    {
+      "q": "Explain why gastric erosions are less likely than ulcers to cause serious bleeding or perforation.",
+      "a": "Because erosions are limited to the mucosa and do not breach the submucosa, they generally spare the deeper submucosal vessels, whereas ulcers extend into or beyond the submucosa where larger vessels lie, making ulcers more prone to significant bleeding and perforation."
+    },
+    {
+      "q": "Why does thrombotic occlusion of surface capillaries, provoked by H. pylori's platelet-activating factor, contribute to mucosal injury?",
+      "a": "Because it compromises local mucosal blood flow, one of the three normal protective mechanisms of the gastric mucosa, undermining tissue oxygenation and repair and predisposing to ulceration."
+    },
+    {
+      "q": "Explain how the primary versus secondary classification of MAS reflects two different disease origins despite a shared clinical picture.",
+      "a": "Both converge on steatorrhea because both impair intestinal nutrient absorption, but primary MAS originates from an intrinsic mucosal/enzymatic defect, while secondary MAS originates from an extrinsic insult (disease, surgery, trauma, drugs) damaging otherwise normal mucosa."
+    },
+    {
+      "q": "Explain how Crohn's disease's segmental 'skip lesions' differ conceptually from ulcerative colitis's continuous involvement.",
+      "a": "Crohn's disease shows patchy, discontinuous lesions anywhere from mouth to anus, implying a multifocal granulomatous immune process, while UC shows continuous, confluent inflammation starting at the rectum and extending proximally, implying a more uniform mucosal immune injury without focal sparing."
+    },
+    {
+      "q": "Explain why appendicitis is classified as a surgical emergency rather than managed purely medically in most cases.",
+      "a": "Untreated luminal obstruction leads to progressive ischemia, bacterial proliferation, and risk of rupture with peritonitis; surgical removal eliminates the obstructed, ischemic focus and decreases the risk of severe complications, though antibiotics alone may suffice in select non-ruptured cases."
+    },
+    {
+      "q": "Why is the sigmoid colon the most common site for diverticular disease, based on the general concept of a diverticulum?",
+      "a": "Because a diverticulum is a blind pouch forming at a point of relative wall weakness in the alimentary tract, and the sigmoid colon is where this weakness and pouch formation most commonly occur."
+    },
+    {
+      "q": "Explain the logical link between chronic gastritis's histological progression and its clinical importance.",
+      "a": "Chronic gastritis causes intestinal metaplasia and atrophy that may progress to dysplasia and carcinoma, which is precisely why gastritis is emphasized as clinically important due to its relationship with gastric cancer (and peptic ulcer)."
+    },
+    {
+      "q": "Why might a duodenal ulcer patient almost always test positive for H. pylori, while a gastric ulcer patient might not?",
+      "a": "Because H. pylori is present in virtually all duodenal ulcer patients but only about 70% of gastric ulcer patients, implying other factors account for a larger proportion of gastric ulcer cases than duodenal ulcer cases."
+    },
+    {
+      "q": "Explain, mechanistically, how volvulus can progress from simple obstruction to bowel infarction.",
+      "a": "Volvulus twists a bowel loop and its mesentery together, compromising the blood supply to that loop, so the same twisting mechanism causing obstruction also produces ischemic infarction if untreated."
+    },
+    {
+      "q": "Why are Crohn's disease and ulcerative colitis still described as having an idiopathic etiology despite detailed immune mechanisms being described for each?",
+      "a": "Because although the immune mechanisms and contributing factors (genetic, immunologic, exogenous like microbes and psychology) are described, no single definitive causative agent has been identified, so the disease remains classified as idiopathic with multifactorial predisposition."
+    },
+    {
+      "q": "Why do extra-intestinal manifestations occur in IBD?",
+      "a": "Because both Crohn's disease and ulcerative colitis are systemic, chronic inflammatory disorders, so their dysregulated immune response also manifests in extra-intestinal tissues such as joints, skin, and liver."
+    },
+    {
+      "q": "Why must all gastric protective mechanisms fail together before an ulcer, rather than an erosion, develops?",
+      "a": "As long as at least one protective mechanism sufficiently limits damage, injury tends to stay superficial; only when aggressive factors overwhelm the mucus/bicarbonate barrier, impair blood flow, and outpace epithelial turnover together does injury extend through the mucosa into the submucosa, becoming a true ulcer."
+    },
+    {
+      "q": "Synthesize why H. pylori is considered a unifying pathogen linking chronic gastritis, peptic ulcer disease, and gastric cancer risk.",
+      "a": "H. pylori initiates chronic inflammation through cytokine- and toxin-mediated epithelial injury (chronic gastritis); this same injury and acid/mucosal-defense imbalance predisposes to peptic ulcer formation; and the long-term intestinal metaplasia, atrophy, and dysplasia it produces is the pathway toward gastric carcinoma."
+    }
+  ]
+};
+
+const quizDataByLevel = {
+  "easy": [
+    {
+      "q": "Stomatitis is defined as:",
+      "correct": "Inflammation of the mucous membrane of the mouth",
+      "wrong": [
+        "Inflammation of the esophagus",
+        "Inflammation of the stomach lining",
+        "Inflammation of the salivary glands"
+      ]
+    },
+    {
+      "q": "The commonest form of oral ulceration is:",
+      "correct": "Aphthous ulcers",
+      "wrong": [
+        "Herpetic ulcers",
+        "Traumatic ulcers",
+        "Leukoplakic ulcers"
+      ]
+    },
+    {
+      "q": "Aphthous ulcers are typically:",
+      "correct": "Painful and 1 cm or more in size",
+      "wrong": [
+        "Painless and pinpoint",
+        "Seen only in children",
+        "Always caused by candida"
+      ]
+    },
+    {
+      "q": "The two fungal infections commonly involving the oral mucosa are:",
+      "correct": "Candidiasis and actinomycosis",
+      "wrong": [
+        "Histoplasmosis and blastomycosis",
+        "Aspergillosis and mucormycosis",
+        "Cryptococcosis and coccidioidomycosis"
+      ]
+    },
+    {
+      "q": "Inflammation of the tongue is termed:",
+      "correct": "Glossitis",
+      "wrong": [
+        "Gingivitis",
+        "Pharyngitis",
+        "Stomatitis"
+      ]
+    },
+    {
+      "q": "Inflammation of the gums is termed:",
+      "correct": "Gingivitis",
+      "wrong": [
+        "Glossitis",
+        "Pharyngitis",
+        "Cheilitis"
+      ]
+    },
+    {
+      "q": "Inflammation of the back of the mouth is termed:",
+      "correct": "Pharyngitis",
+      "wrong": [
+        "Glossitis",
+        "Gingivitis",
+        "Laryngitis"
+      ]
+    },
+    {
+      "q": "Esophagitis refers to:",
+      "correct": "Inflammation of the esophagus",
+      "wrong": [
+        "Inflammation of the stomach",
+        "Narrowing of the esophagus",
+        "Rupture of the esophagus"
+      ]
+    },
+    {
+      "q": "The most common cause of esophagitis is:",
+      "correct": "Gastro-esophageal reflux",
+      "wrong": [
+        "Viral infection",
+        "Fungal infection",
+        "Chemical burn"
+      ]
+    },
+    {
+      "q": "GERD stands for:",
+      "correct": "Gastro-esophageal reflux disease",
+      "wrong": [
+        "Gastric epithelial reflux disorder",
+        "General esophageal reflux disease",
+        "Gastro-enteric reflux dysfunction"
+      ]
+    },
+    {
+      "q": "In reflux esophagitis, what refluxes into the lower esophagus?",
+      "correct": "Gastric juice",
+      "wrong": [
+        "Bile only",
+        "Pancreatic enzymes only",
+        "Air"
+      ]
+    },
+    {
+      "q": "Gastro-esophageal reflux can occur physiologically in normal healthy individuals:",
+      "correct": "After heavy meals and in early pregnancy",
+      "wrong": [
+        "Only during sleep",
+        "Only in infancy",
+        "Only after surgery"
+      ]
+    },
+    {
+      "q": "Which of the following predisposes to reflux esophagitis?",
+      "correct": "Sliding hiatus hernia",
+      "wrong": [
+        "Appendicitis",
+        "Celiac disease",
+        "Ulcerative colitis"
+      ]
+    },
+    {
+      "q": "What is described as vital to the development of esophageal mucosal injury in reflux?",
+      "correct": "The action of gastric juice",
+      "wrong": [
+        "Bacterial overgrowth",
+        "Mechanical trauma from food",
+        "Cold liquids"
+      ]
+    },
+    {
+      "q": "Barrett's esophagus is defined by:",
+      "correct": "Replacement of squamous epithelium by columnar epithelium in the lower esophagus",
+      "wrong": [
+        "Complete loss of esophageal epithelium",
+        "Squamous metaplasia of gastric mucosa",
+        "Formation of esophageal varices"
+      ]
+    },
+    {
+      "q": "Barrett's esophagus is seen more commonly in:",
+      "correct": "Old age",
+      "wrong": [
+        "Childhood",
+        "Adolescence",
+        "Infancy"
+      ]
+    },
+    {
+      "q": "Barrett's esophagus is best described as:",
+      "correct": "A premalignant condition",
+      "wrong": [
+        "A benign, self-limiting condition",
+        "An infectious disease",
+        "A congenital anomaly"
+      ]
+    },
+    {
+      "q": "The malignant endpoint of Barrett's esophagus is:",
+      "correct": "Esophageal adenocarcinoma",
+      "wrong": [
+        "Squamous cell carcinoma",
+        "Gastric lymphoma",
+        "Esophageal sarcoma"
+      ]
+    },
+    {
+      "q": "Gastritis is best defined as:",
+      "correct": "Inflammation of the gastric mucosa",
+      "wrong": [
+        "Inflammation of the duodenum",
+        "Ulceration of the esophagus",
+        "Infection of the pancreas"
+      ]
+    },
+    {
+      "q": "Gastritis is fundamentally diagnosed by:",
+      "correct": "Microscopic (histological) examination",
+      "wrong": [
+        "Barium swallow",
+        "Stool culture",
+        "Physical examination alone"
+      ]
+    },
+    {
+      "q": "Acute gastritis is histologically characterized by infiltration of:",
+      "correct": "Neutrophils",
+      "wrong": [
+        "Eosinophils only",
+        "Mast cells",
+        "Basophils"
+      ]
+    },
+    {
+      "q": "Chronic gastritis is histologically characterized by infiltration of:",
+      "correct": "Lymphocytes and/or plasma cells",
+      "wrong": [
+        "Neutrophils only",
+        "Eosinophils only",
+        "Giant cells only"
+      ]
+    },
+    {
+      "q": "Which of the following is a dietary/personal-habit cause of acute gastritis?",
+      "correct": "Highly spiced food",
+      "wrong": [
+        "Low-fiber diet",
+        "High-protein diet",
+        "Vegetarian diet"
+      ]
+    },
+    {
+      "q": "Which bacterium is listed as a cause of acute gastritis?",
+      "correct": "Helicobacter pylori",
+      "wrong": [
+        "Escherichia coli",
+        "Clostridium difficile",
+        "Staphylococcus aureus"
+      ]
+    },
+    {
+      "q": "Which drug group is listed as a cause of acute gastritis?",
+      "correct": "NSAIDs",
+      "wrong": [
+        "Antihistamines",
+        "Beta-blockers",
+        "Antibiotics"
+      ]
+    },
+    {
+      "q": "The most common cause of chronic gastritis is:",
+      "correct": "Helicobacter pylori infection",
+      "wrong": [
+        "Autoimmune disease only",
+        "Viral hepatitis",
+        "Excess dietary fiber"
+      ]
+    },
+    {
+      "q": "A peptic ulcer is defined as a breach in the mucosa that:",
+      "correct": "Extends to the submucosa or deeper",
+      "wrong": [
+        "Is limited strictly to the mucosa",
+        "Only affects the serosa",
+        "Never bleeds"
+      ]
+    },
+    {
+      "q": "Erosions differ from ulcers in that erosions:",
+      "correct": "Are limited to the mucosa and do not extend to the submucosa",
+      "wrong": [
+        "Always extend through the full bowel wall",
+        "Are always malignant",
+        "Only occur in the esophagus"
+      ]
+    },
+    {
+      "q": "Peptic ulcers occur most commonly (98–99%) in:",
+      "correct": "The duodenum or the stomach",
+      "wrong": [
+        "The jejunum or ileum",
+        "The esophagus or pharynx",
+        "The cecum or rectum"
+      ]
+    },
+    {
+      "q": "In the stomach, peptic ulcers usually occur:",
+      "correct": "In the antrum, along the lesser curvature",
+      "wrong": [
+        "In the fundus",
+        "Along the greater curvature",
+        "In the cardia"
+      ]
+    },
+    {
+      "q": "Which of the following is NOT one of the three normal protective mechanisms of the gastric mucosa?",
+      "correct": "High gastric acid secretion",
+      "wrong": [
+        "Protective mucous layer",
+        "Good blood supply",
+        "Rapid turnover of epithelial cells"
+      ]
+    },
+    {
+      "q": "Which organism is described as a major factor in peptic ulcer pathogenesis?",
+      "correct": "Helicobacter pylori",
+      "wrong": [
+        "Salmonella typhi",
+        "Candida albicans",
+        "Herpes simplex virus"
+      ]
+    },
+    {
+      "q": "H. pylori is present in about what percentage of gastric ulcer patients?",
+      "correct": "70%",
+      "wrong": [
+        "10%",
+        "30%",
+        "100%"
+      ]
+    },
+    {
+      "q": "Zollinger-Ellison syndrome is caused by:",
+      "correct": "A gastrin-secreting tumor or islet cell hyperplasia",
+      "wrong": [
+        "A pepsin-secreting tumor",
+        "Excess bicarbonate secretion",
+        "Chronic bile reflux"
+      ]
+    },
+    {
+      "q": "Gastrin-secreting tumors are called:",
+      "correct": "Gastrinomas",
+      "wrong": [
+        "Insulinomas",
+        "Glucagonomas",
+        "Somatostatinomas"
+      ]
+    },
+    {
+      "q": "Which condition is described as the most common acute abdominal surgical emergency?",
+      "correct": "Acute appendicitis",
+      "wrong": [
+        "Acute cholecystitis",
+        "Acute pancreatitis",
+        "Diverticulitis"
+      ]
+    },
+    {
+      "q": "The most common symptom of peptic ulcer disease is:",
+      "correct": "Burning stomach pain",
+      "wrong": [
+        "Jaundice",
+        "Dysphagia",
+        "Hematochezia"
+      ]
+    },
+    {
+      "q": "In acute appendicitis, the obstructing agent is usually a:",
+      "correct": "Fecolith",
+      "wrong": [
+        "Gallstone",
+        "Adhesion",
+        "Polyp"
+      ]
+    },
+    {
+      "q": "Classic symptoms of acute appendicitis include:",
+      "correct": "Right lower abdominal pain, nausea, vomiting, and decreased appetite",
+      "wrong": [
+        "Left upper quadrant pain and jaundice",
+        "Dysphagia and heartburn",
+        "Bloody diarrhea and tenesmus"
+      ]
+    },
+    {
+      "q": "The most common complication of peptic ulcer is:",
+      "correct": "Internal bleeding",
+      "wrong": [
+        "Fistula formation",
+        "Malabsorption",
+        "Esophageal varices"
+      ]
+    },
+    {
+      "q": "Besides bleeding, peptic ulcers may be complicated by:",
+      "correct": "Perforation, penetration, or obstruction",
+      "wrong": [
+        "Meningitis",
+        "Pericarditis",
+        "Pancreatitis only"
+      ]
+    },
+    {
+      "q": "Which drug classes are used to slow gastric acid secretion in peptic ulcer treatment?",
+      "correct": "Proton pump inhibitors and H2-receptor antagonists",
+      "wrong": [
+        "Antibiotics and antivirals",
+        "Beta-blockers and diuretics",
+        "Corticosteroids and NSAIDs"
+      ]
+    },
+    {
+      "q": "Omeprazole and lansoprazole belong to which drug class?",
+      "correct": "Proton pump inhibitors",
+      "wrong": [
+        "H2-receptor antagonists",
+        "Antacids",
+        "Antibiotics"
+      ]
+    },
+    {
+      "q": "The hallmark clinical feature of malabsorption syndrome is:",
+      "correct": "Steatorrhea",
+      "wrong": [
+        "Constipation",
+        "Jaundice",
+        "Hematemesis"
+      ]
+    },
+    {
+      "q": "Steatorrhea is best described as:",
+      "correct": "Bulky, frothy, greasy-yellow stools",
+      "wrong": [
+        "Watery, clear stools",
+        "Small, hard, pellet-like stools",
+        "Black, tarry stools"
+      ]
+    },
+    {
+      "q": "Primary malabsorption syndrome is due to:",
+      "correct": "Primary deficiency of the absorptive mucosal surface and enzymes",
+      "wrong": [
+        "Surgical resection alone",
+        "Drug side effects alone",
+        "Infection alone"
+      ]
+    },
+    {
+      "q": "Secondary malabsorption syndrome results from:",
+      "correct": "Diseases, surgery, trauma, or drugs",
+      "wrong": [
+        "Genetic enzyme deficiency only",
+        "Congenital mucosal defect only",
+        "Unknown idiopathic cause only"
+      ]
+    },
+    {
+      "q": "Celiac disease is triggered by:",
+      "correct": "Gluten",
+      "wrong": [
+        "Lactose",
+        "Fructose",
+        "Casein"
+      ]
+    },
+    {
+      "q": "Celiac disease is also known as:",
+      "correct": "Gluten-sensitive enteropathy",
+      "wrong": [
+        "Lactose intolerance syndrome",
+        "Irritable bowel syndrome",
+        "Whipple's disease"
+      ]
+    },
+    {
+      "q": "Gluten is a protein found in:",
+      "correct": "Wheat, barley, and other grains",
+      "wrong": [
+        "Dairy products",
+        "Legumes only",
+        "Meat products"
+      ]
+    },
+    {
+      "q": "Celiac disease improves with:",
+      "correct": "Withdrawal of wheat gluten from the diet",
+      "wrong": [
+        "A high-fat diet",
+        "Antibiotic therapy",
+        "Corticosteroid therapy alone"
+      ]
+    },
+    {
+      "q": "The two main inflammatory bowel diseases are:",
+      "correct": "Crohn's disease and ulcerative colitis",
+      "wrong": [
+        "Celiac disease and gastritis",
+        "Diverticulitis and appendicitis",
+        "GERD and Barrett's esophagus"
+      ]
+    },
+    {
+      "q": "A symptom common to both Crohn's disease and ulcerative colitis is:",
+      "correct": "Diarrhea",
+      "wrong": [
+        "Jaundice",
+        "Dysphagia",
+        "Hematuria"
+      ]
+    },
+    {
+      "q": "Which disease can affect any portion of the GI tract from mouth to anus?",
+      "correct": "Crohn's disease",
+      "wrong": [
+        "Ulcerative colitis",
+        "Celiac disease",
+        "Diverticular disease"
+      ]
+    },
+    {
+      "q": "Crohn's disease characteristically involves:",
+      "correct": "All layers of the bowel wall (transmural)",
+      "wrong": [
+        "Only the mucosa",
+        "Only the serosa",
+        "Only the submucosa"
+      ]
+    },
+    {
+      "q": "Ulcerative colitis characteristically involves:",
+      "correct": "Only the mucosa and submucosa",
+      "wrong": [
+        "All layers of the bowel wall",
+        "Only the serosa and muscularis",
+        "The mesentery only"
+      ]
+    },
+    {
+      "q": "Non-caseating granulomas are a hallmark of:",
+      "correct": "Crohn's disease",
+      "wrong": [
+        "Ulcerative colitis",
+        "Celiac disease",
+        "Diverticular disease"
+      ]
+    },
+    {
+      "q": "Which segment of the colon is always involved in ulcerative colitis?",
+      "correct": "The rectum",
+      "wrong": [
+        "The cecum",
+        "The transverse colon",
+        "The hepatic flexure"
+      ]
+    },
+    {
+      "q": "The most common site of diverticular disease is:",
+      "correct": "The sigmoid colon (left colon)",
+      "wrong": [
+        "The cecum",
+        "The duodenum",
+        "The transverse colon"
+      ]
+    },
+    {
+      "q": "The small intestine is the most common site of intestinal obstruction because of its:",
+      "correct": "Narrow lumen",
+      "wrong": [
+        "Long length",
+        "Thick muscular wall",
+        "Rich lymphatic drainage"
+      ]
+    }
+  ],
+  "medium": [
+    {
+      "q": "Gastro-esophageal reflux is considered physiological (non-disease) when it occurs:",
+      "correct": "After heavy meals or in early pregnancy",
+      "wrong": [
+        "At any time regardless of meals",
+        "Only during vigorous exercise",
+        "Only in elderly bedridden patients"
+      ]
+    },
+    {
+      "q": "Besides sliding hiatus hernia, reflux esophagitis is predisposed by:",
+      "correct": "Persistent vomiting and nasogastric intubation",
+      "wrong": [
+        "Vitamin deficiency",
+        "A high-fiber diet",
+        "Regular exercise"
+      ]
+    },
+    {
+      "q": "The correct sequence of epithelial change in Barrett's esophagus progressing to malignancy is:",
+      "correct": "Barrett's epithelium → dysplasia → carcinoma in situ → adenocarcinoma",
+      "wrong": [
+        "Dysplasia → Barrett's epithelium → adenocarcinoma → carcinoma in situ",
+        "Carcinoma in situ → dysplasia → Barrett's epithelium → adenocarcinoma",
+        "Adenocarcinoma → carcinoma in situ → dysplasia → Barrett's epithelium"
+      ]
+    },
+    {
+      "q": "The pathogenesis of Barrett's esophagus involves:",
+      "correct": "A change in the differentiation program of the esophageal mucosal stem cell producing columnar cells with goblet cells",
+      "wrong": [
+        "Complete destruction of the esophageal stem cell population",
+        "Viral transformation of squamous cells",
+        "Autoimmune destruction of esophageal glands"
+      ]
+    },
+    {
+      "q": "Gastritis is clinically important mainly because of its relationship with:",
+      "correct": "Peptic ulcer and gastric cancer",
+      "wrong": [
+        "Appendicitis and diverticulitis",
+        "Celiac disease and IBD",
+        "Esophageal varices and cirrhosis"
+      ]
+    },
+    {
+      "q": "Histologically, acute and chronic gastritis are distinguished mainly by:",
+      "correct": "Neutrophil infiltration (acute) versus lymphocytic/plasma cell infiltration (chronic)",
+      "wrong": [
+        "Presence of granulomas (acute) versus absence (chronic)",
+        "Eosinophil infiltration in both equally",
+        "Complete absence of inflammatory cells in chronic gastritis"
+      ]
+    },
+    {
+      "q": "The categories of causes of acute gastritis include all of the following EXCEPT:",
+      "correct": "Genetic chromosomal abnormality",
+      "wrong": [
+        "Diet and personal habits",
+        "Infections",
+        "Drugs and chemical/physical agents"
+      ]
+    },
+    {
+      "q": "Recurrent attacks of which condition may result in chronic gastritis?",
+      "correct": "Acute gastritis",
+      "wrong": [
+        "Acute appendicitis",
+        "Acute pancreatitis",
+        "Acute cholecystitis"
+      ]
+    },
+    {
+      "q": "H. pylori damages the gastric mucosa in chronic gastritis mainly by:",
+      "correct": "Stimulating pro-inflammatory cytokines and releasing toxins/degrading enzymes",
+      "wrong": [
+        "Directly invading the bloodstream",
+        "Producing excess bicarbonate",
+        "Increasing mucus secretion"
+      ]
+    },
+    {
+      "q": "The general mechanism of chronic gastric injury, regardless of the causal agent, is:",
+      "correct": "Cytotoxic effect on gastric epithelium, breaking the mucosal barrier and inciting inflammation",
+      "wrong": [
+        "Direct malignant transformation of epithelium",
+        "Autoimmune destruction of parietal cells only, in all cases",
+        "Complete regeneration without any damage"
+      ]
+    },
+    {
+      "q": "Untreated chronic gastritis can histologically progress to:",
+      "correct": "Intestinal metaplasia, atrophy, dysplasia, and potentially carcinoma",
+      "wrong": [
+        "Complete normalization of mucosa",
+        "Squamous metaplasia only",
+        "Isolated eosinophilic infiltration"
+      ]
+    },
+    {
+      "q": "An ulcer must be distinguished from an erosion because an ulcer:",
+      "correct": "Extends to the submucosa or deeper",
+      "wrong": [
+        "Is always smaller than an erosion",
+        "Never causes symptoms",
+        "Only occurs in the esophagus"
+      ]
+    },
+    {
+      "q": "Peptic ulcer disease results when the balance between which two factors is disrupted?",
+      "correct": "Gastric acid secretion and gastro-duodenal mucosal defense",
+      "wrong": [
+        "Blood glucose and insulin secretion",
+        "Bile production and gallbladder motility",
+        "Pancreatic enzyme secretion and duct patency"
+      ]
+    },
+    {
+      "q": "Aggressive factors cause epithelial injury in peptic ulcer disease mainly by:",
+      "correct": "Allowing back-diffusion of hydrogen ions through increased mucosal permeability",
+      "wrong": [
+        "Directly increasing epithelial cell turnover",
+        "Enhancing bicarbonate secretion",
+        "Improving mucosal blood flow"
+      ]
+    },
+    {
+      "q": "Which of the following is NOT one of the mechanisms by which H. pylori contributes to peptic ulcer pathogenesis?",
+      "correct": "Increasing mucosal prostaglandin synthesis",
+      "wrong": [
+        "Inducing cytokine-mediated inflammation",
+        "Producing urease, vacuolating toxin, and proteases",
+        "Enhancing acid secretion while impairing duodenal bicarbonate"
+      ]
+    },
+    {
+      "q": "H. pylori urease damages the mucosa by converting urea into:",
+      "correct": "Ammonia, which is toxic to the mucosa",
+      "wrong": [
+        "Carbon dioxide, which is inert",
+        "Bicarbonate, which is protective",
+        "Lactic acid, which is buffered"
+      ]
+    },
+    {
+      "q": "H. pylori promotes duodenal ulceration by impairing:",
+      "correct": "Duodenal bicarbonate production, reducing luminal pH",
+      "wrong": [
+        "Duodenal motility, causing stasis",
+        "Duodenal blood supply directly",
+        "Bile acid secretion"
+      ]
+    },
+    {
+      "q": "Zollinger-Ellison syndrome causes recurrent peptic ulcers through:",
+      "correct": "A gastrin-secreting tumor causing acid overproduction",
+      "wrong": [
+        "Deficient gastric acid secretion",
+        "Excess bile reflux into the stomach",
+        "Autoimmune destruction of gastric glands"
+      ]
+    },
+    {
+      "q": "NSAIDs promote ulcer formation biochemically by:",
+      "correct": "Inhibiting cyclooxygenase, reducing prostaglandin synthesis from arachidonic acid",
+      "wrong": [
+        "Inhibiting phospholipase A2 directly",
+        "Increasing bicarbonate secretion",
+        "Enhancing mucus production"
+      ]
+    },
+    {
+      "q": "Compared to NSAIDs, corticosteroids block prostaglandin synthesis at an earlier step by inhibiting:",
+      "correct": "Phospholipase A2",
+      "wrong": [
+        "Cyclooxygenase",
+        "Lipoxygenase",
+        "Thromboxane synthase"
+      ]
+    },
+    {
+      "q": "Which of the following is classified as an 'aggressive factor' disrupting gastric mucosal balance?",
+      "correct": "Bile reflux",
+      "wrong": [
+        "Mucus and bicarbonate secretion",
+        "Blood flow",
+        "Antioxidant defense"
+      ]
+    },
+    {
+      "q": "Which of the following is classified as a 'defending factor' of the gastric mucosa?",
+      "correct": "Nitric oxide and prostaglandins",
+      "wrong": [
+        "Helicobacter pylori",
+        "NSAID use",
+        "Free radicals"
+      ]
+    },
+    {
+      "q": "Steatorrhea, the hallmark of malabsorption syndrome, specifically reflects impaired absorption of:",
+      "correct": "Fat",
+      "wrong": [
+        "Water only",
+        "Sodium only",
+        "Potassium only"
+      ]
+    },
+    {
+      "q": "In malabsorption syndrome, besides fat, which other nutrients are poorly absorbed?",
+      "correct": "Proteins, carbohydrates, vitamins, and minerals",
+      "wrong": [
+        "Only water-soluble vitamins",
+        "Only electrolytes",
+        "Only trace minerals"
+      ]
+    },
+    {
+      "q": "Secondary malabsorption syndrome is best exemplified by malabsorption resulting from:",
+      "correct": "Prior intestinal surgery or trauma",
+      "wrong": [
+        "An inherited enzyme deficiency present since birth",
+        "A primary defect of the absorptive mucosal surface",
+        "Idiopathic causes with no identifiable trigger"
+      ]
+    },
+    {
+      "q": "The pathogenesis of celiac disease involves interaction between:",
+      "correct": "Environmental, genetic, and immunologic factors",
+      "wrong": [
+        "Only genetic factors",
+        "Only dietary factors",
+        "Only infectious factors"
+      ]
+    },
+    {
+      "q": "In celiac disease, gliadin is broken down by which enzyme to form immunogenic peptides?",
+      "correct": "Tissue transglutaminase",
+      "wrong": [
+        "Pepsin",
+        "Lactase",
+        "Trypsin"
+      ]
+    },
+    {
+      "q": "In celiac disease, gliadin-derived peptides are recognized by which cells, leading to enterocyte damage?",
+      "correct": "CD4+ T cells, via interferon secretion",
+      "wrong": [
+        "B lymphocytes, via antibody deposition",
+        "Neutrophils, via degranulation",
+        "Mast cells, via histamine release"
+      ]
+    },
+    {
+      "q": "Which feature is shared by both Crohn's disease and ulcerative colitis?",
+      "correct": "Both are chronic inflammatory disorders of obscure origin with extra-intestinal manifestations",
+      "wrong": [
+        "Both always involve non-caseating granulomas",
+        "Both are limited strictly to the rectum",
+        "Both are caused by gluten sensitivity"
+      ]
+    },
+    {
+      "q": "In a healthy gut, the mucosal immune system is normally:",
+      "correct": "Ready to respond to pathogens but unresponsive (tolerant) to normal flora",
+      "wrong": [
+        "Equally aggressive toward all bacteria, pathogenic or commensal",
+        "Completely inactive at baseline",
+        "Only active in the colon, not the small intestine"
+      ]
+    },
+    {
+      "q": "In IBD, disrupted gut immune homeostasis is characterized by:",
+      "correct": "A strong immune response against normal flora plus an epithelial barrier defect",
+      "wrong": [
+        "Complete loss of all intestinal immune function",
+        "Excessive tolerance to pathogens",
+        "Absence of any epithelial changes"
+      ]
+    },
+    {
+      "q": "Crohn's disease pathogenesis is best explained by:",
+      "correct": "A delayed-type hypersensitivity reaction driven by interferon-gamma-producing TH1 cells",
+      "wrong": [
+        "An IgE-mediated immediate hypersensitivity reaction",
+        "A TH2-driven eosinophilic response",
+        "A complement-mediated cytotoxic reaction"
+      ]
+    },
+    {
+      "q": "Ulcerative colitis pathogenesis is best explained by:",
+      "correct": "Excessive activation of TH2 cells",
+      "wrong": [
+        "Excessive activation of TH1 cells",
+        "IgE-mediated hypersensitivity",
+        "A cytotoxic CD8+ T cell-only response"
+      ]
+    },
+    {
+      "q": "The two key pathological features of Crohn's disease are:",
+      "correct": "Segmental transmural inflammation and non-caseating granulomas with deep fissures",
+      "wrong": [
+        "Continuous mucosal inflammation and pseudopolyps",
+        "Superficial mucosal ulceration only and crypt abscesses",
+        "Diffuse serosal inflammation without mucosal involvement"
+      ]
+    },
+    {
+      "q": "Deep fissures in Crohn's disease predispose to formation of:",
+      "correct": "Fistulas",
+      "wrong": [
+        "Diverticula",
+        "Polyps",
+        "Varices"
+      ]
+    },
+    {
+      "q": "Anemia in Crohn's disease with colonic involvement is typically due to:",
+      "correct": "Chronic fecal blood loss",
+      "wrong": [
+        "Vitamin B12 malabsorption exclusively",
+        "Hemolysis",
+        "Bone marrow suppression by drugs only"
+      ]
+    },
+    {
+      "q": "Which of the following is an extra-intestinal manifestation of Crohn's disease?",
+      "correct": "Erythema nodosum",
+      "wrong": [
+        "Esophageal varices",
+        "Barrett's esophagus",
+        "Pyloric stenosis"
+      ]
+    },
+    {
+      "q": "For severe Crohn's disease flares, the treatment of choice is:",
+      "correct": "Corticosteroids",
+      "wrong": [
+        "5-aminosalicylic acid alone",
+        "Loperamide alone",
+        "Dietary modification alone"
+      ]
+    },
+    {
+      "q": "Compared to Crohn's disease, ulcerative colitis is limited to:",
+      "correct": "The mucosa and submucosa",
+      "wrong": [
+        "The mucosa, submucosa, and muscularis propria",
+        "All layers of the bowel wall",
+        "The serosa only"
+      ]
+    },
+    {
+      "q": "Which of the following is NOT a way ulcerative colitis differs pathologically from Crohn's disease?",
+      "correct": "UC shows deep fissures and fistula formation",
+      "wrong": [
+        "UC lacks well-formed granulomas",
+        "UC ulcers rarely extend below the submucosa",
+        "UC carries a higher risk of carcinoma"
+      ]
+    },
+    {
+      "q": "The typical bowel habit in active ulcerative colitis includes:",
+      "correct": "10 to 20 bloody, mucous bowel movements per day with cramping",
+      "wrong": [
+        "2 to 3 formed stools per day",
+        "Chronic constipation with hard stools",
+        "Painless watery diarrhea without blood"
+      ]
+    },
+    {
+      "q": "Systemic associations of ulcerative colitis include:",
+      "correct": "Arthritis, hepatic involvement, and skin lesions",
+      "wrong": [
+        "Only renal stones",
+        "Only cardiac arrhythmias",
+        "Only pulmonary fibrosis"
+      ]
+    },
+    {
+      "q": "Regarding smoking, Crohn's disease and ulcerative colitis show:",
+      "correct": "Crohn's disease is more common in smokers; UC is more common in nonsmokers/ex-smokers",
+      "wrong": [
+        "Both are more common in smokers",
+        "Both are more common in nonsmokers",
+        "Smoking has no described relationship with either"
+      ]
+    },
+    {
+      "q": "Compared with ulcerative colitis, Crohn's disease characteristically shows:",
+      "correct": "Common fistulas and marked fibrosis",
+      "wrong": [
+        "Absent fistulas and mild fibrosis",
+        "Pseudopolyps and a thin bowel wall",
+        "Continuous mucosal-only involvement"
+      ]
+    },
+    {
+      "q": "Compared with Crohn's disease, ulcerative colitis shows:",
+      "correct": "A higher risk of colon cancer and absence of granulomas",
+      "wrong": [
+        "A higher rate of non-caseating granulomas",
+        "A higher rate of fistula formation",
+        "A thicker, more fibrotic bowel wall"
+      ]
+    },
+    {
+      "q": "Approximately what proportion of small intestinal obstructions is due to hernia, adhesions, intussusception, or volvulus?",
+      "correct": "About 80%",
+      "wrong": [
+        "About 20%",
+        "About 50%",
+        "About 5%"
+      ]
+    },
+    {
+      "q": "In hernia-related intestinal obstruction, bowel becomes trapped in a:",
+      "correct": "Pouch-like sac (hernia sac) protruding through a defect in the peritoneal cavity wall",
+      "wrong": [
+        "Diverticulum of the colon wall",
+        "Fistula tract",
+        "Area of mucosal atrophy"
+      ]
+    },
+    {
+      "q": "The key difference between intussusception and volvulus is that:",
+      "correct": "Intussusception is telescoping of bowel into itself, while volvulus is twisting of a bowel loop",
+      "wrong": [
+        "Intussusception is twisting of bowel, while volvulus is telescoping",
+        "Both refer to the same process by different names",
+        "Intussusception only occurs in the colon, volvulus only in the stomach"
+      ]
+    },
+    {
+      "q": "The pathogenesis of acute appendicitis begins with:",
+      "correct": "Luminal obstruction, most often by a fecolith",
+      "wrong": [
+        "Ascending bacterial infection from the colon without obstruction",
+        "Autoimmune inflammation of the appendix wall",
+        "Direct viral invasion of the appendiceal mucosa"
+      ]
+    },
+    {
+      "q": "The standard treatment for acute appendicitis is:",
+      "correct": "Surgical removal of the appendix (appendectomy)",
+      "wrong": [
+        "Antibiotics only, in all cases",
+        "Dietary modification and observation",
+        "Proton pump inhibitors"
+      ]
+    }
+  ],
+  "hard": [
+    {
+      "q": "Both NSAIDs and corticosteroids predispose to peptic ulceration because they ultimately:",
+      "correct": "Reduce prostaglandin-mediated gastroprotection (mucus, bicarbonate, and acid suppression)",
+      "wrong": [
+        "Directly increase gastric acid secretion via gastrin release",
+        "Kill protective gastric flora",
+        "Directly damage the muscularis propria"
+      ]
+    },
+    {
+      "q": "Compared with NSAIDs/aspirin, corticosteroids block the arachidonic acid pathway at a step that is:",
+      "correct": "Earlier, by inhibiting phospholipase A2 rather than cyclooxygenase",
+      "wrong": [
+        "Later, by inhibiting thromboxane synthase",
+        "Identical — both inhibit cyclooxygenase",
+        "Unrelated — corticosteroids act only on histamine receptors"
+      ]
+    },
+    {
+      "q": "Which statement best integrates the multiple mechanisms of H. pylori-induced peptic ulceration?",
+      "correct": "H. pylori combines cytokine-driven inflammation, direct toxin-mediated epithelial injury, increased acid with reduced bicarbonate, and capillary thrombosis to overwhelm mucosal defenses",
+      "wrong": [
+        "H. pylori acts solely by directly perforating the mucosa mechanically",
+        "H. pylori works only by suppressing gastric acid secretion",
+        "H. pylori causes ulcers exclusively through viral co-infection"
+      ]
+    },
+    {
+      "q": "Chronic gastritis is not attributed to H. pylori alone because it can also result from:",
+      "correct": "Recurrent acute gastritis, excessive alcohol/smoking, or autoimmune disease",
+      "wrong": [
+        "Excess dietary fiber alone",
+        "Vitamin C deficiency alone",
+        "Cold food ingestion alone"
+      ]
+    },
+    {
+      "q": "The link between chronic gastritis and gastric cancer is best explained by the histological progression of:",
+      "correct": "Intestinal metaplasia and atrophy through dysplasia to carcinoma",
+      "wrong": [
+        "Immediate transformation of normal mucosa to carcinoma without intermediate steps",
+        "Simple hypertrophy of gastric glands",
+        "Replacement of gastric mucosa by squamous epithelium"
+      ]
+    },
+    {
+      "q": "The complete carcinogenic pathway of Barrett's esophagus, from its cellular origin, is best described as:",
+      "correct": "Altered esophageal stem cell differentiation → columnar/goblet cell metaplasia → dysplasia → carcinoma in situ → adenocarcinoma",
+      "wrong": [
+        "Squamous cell hyperplasia → keratinization → squamous cell carcinoma directly",
+        "Viral integration → immediate invasive carcinoma without metaplasia",
+        "Autoimmune destruction of stem cells → regeneration → benign polyp formation"
+      ]
+    },
+    {
+      "q": "Reflux esophagitis develops specifically when:",
+      "correct": "Reflux becomes excessive, so the acid-peptic action of gastric juice injures the lower esophageal mucosa",
+      "wrong": [
+        "Any amount of reflux occurs, since reflux is always pathological",
+        "Only alkaline bile refluxes without any acid component",
+        "Gastric acid production stops completely"
+      ]
+    },
+    {
+      "q": "The differing T-helper responses in Crohn's disease and ulcerative colitis correlate with each disease's pathology as follows:",
+      "correct": "TH1/interferon-gamma in Crohn's correlates with granuloma formation, while TH2 dominance in UC correlates with more superficial, granuloma-free inflammation",
+      "wrong": [
+        "TH2 in Crohn's causes granulomas, while TH1 in UC causes superficial disease",
+        "Both diseases share an identical TH17-driven mechanism",
+        "Neither disease has any established T-helper cell association"
+      ]
+    },
+    {
+      "q": "IBD pathogenesis in genetically susceptible individuals is best explained by:",
+      "correct": "An epithelial barrier defect allowing microflora to reach lymphoid tissue, triggering an exaggerated immune response against normal flora",
+      "wrong": [
+        "Complete absence of any gut immune system",
+        "Selective destruction of only pathogenic bacteria",
+        "A defect confined entirely to the liver's Kupffer cells"
+      ]
+    },
+    {
+      "q": "Crohn's disease has a higher fistula rate than ulcerative colitis because:",
+      "correct": "Its transmural, segmental inflammation with deep fissures penetrates the full bowel wall thickness",
+      "wrong": [
+        "It is confined to the mucosa, sparing deeper structures",
+        "It never involves the intestinal wall directly",
+        "Ulcerative colitis inflammation is always deeper than Crohn's"
+      ]
+    },
+    {
+      "q": "Ulcerative colitis carries a higher malignancy risk than Crohn's disease mainly because:",
+      "correct": "Its continuous, long-standing mucosal inflammation predisposes the colonic epithelium to dysplasia-carcinoma progression",
+      "wrong": [
+        "It involves deeper transmural layers than Crohn's disease",
+        "It is caused by gluten sensitivity, which is inherently carcinogenic",
+        "It always coexists with H. pylori infection"
+      ]
+    },
+    {
+      "q": "In celiac disease, the pathogenic sequence from gluten ingestion to enterocyte damage is:",
+      "correct": "Gliadin deamidation by tissue transglutaminase → peptide recognition by CD4+ T cells → interferon secretion → enterocyte injury",
+      "wrong": [
+        "Direct gliadin binding to enterocyte DNA causing mutation",
+        "Gliadin-induced histamine release from mast cells causing anaphylaxis",
+        "Gliadin fermentation by colonic bacteria producing toxic gas"
+      ]
+    },
+    {
+      "q": "Gluten withdrawal reverses the celiac mucosal lesion because it:",
+      "correct": "Removes the antigenic trigger driving the CD4+ T-cell/interferon-mediated enterocyte injury",
+      "wrong": [
+        "Directly regenerates destroyed genetic material",
+        "Kills the causative bacteria responsible for the disease",
+        "Increases pepsin secretion to compensate for malabsorption"
+      ]
+    },
+    {
+      "q": "The combined effect of H. pylori urease activity and impaired duodenal bicarbonate secretion is to:",
+      "correct": "Produce mucosa-toxic ammonia while lowering luminal pH, damaging the duodenal mucosa",
+      "wrong": [
+        "Neutralize gastric acid completely, protecting the mucosa",
+        "Increase mucus production, protecting the duodenum",
+        "Have no net effect on mucosal integrity"
+      ]
+    },
+    {
+      "q": "Peptic ulcer disease is best conceptualized as resulting from:",
+      "correct": "An imbalance between aggressive factors and mucosal defenses",
+      "wrong": [
+        "A purely genetic disorder unrelated to acid or mucosal defense",
+        "An isolated infection with no role for acid or mucosal factors",
+        "A disorder solely of pancreatic enzyme secretion"
+      ]
+    },
+    {
+      "q": "The key mechanistic distinction between primary and secondary malabsorption syndrome is that:",
+      "correct": "Primary MAS arises from an intrinsic mucosal/enzymatic defect, while secondary MAS arises from an extrinsic disease process damaging normal mucosa",
+      "wrong": [
+        "Primary MAS is always caused by surgery, while secondary MAS is always congenital",
+        "Both have identical causes and cannot be distinguished",
+        "Secondary MAS never affects fat absorption"
+      ]
+    },
+    {
+      "q": "Zollinger-Ellison syndrome produces ulcers that are often refractory to standard therapy because:",
+      "correct": "Autonomous gastrin secretion causes sustained acid hypersecretion independent of normal feedback or H. pylori status",
+      "wrong": [
+        "It is caused by H. pylori resistant to all antibiotics",
+        "It results from complete absence of gastric acid secretion",
+        "It only affects the esophagus, not the stomach or duodenum"
+      ]
+    },
+    {
+      "q": "The correct sequence of events from luminal obstruction to peritonitis in acute appendicitis is:",
+      "correct": "Obstruction → venous compression and reduced blood flow → ischemic injury → bacterial proliferation and edema → necrosis/rupture → peritonitis",
+      "wrong": [
+        "Peritonitis → obstruction → ischemia → rupture → bacterial proliferation",
+        "Bacterial proliferation → resolution → obstruction → healing",
+        "Rupture occurs immediately upon obstruction without any intermediate ischemic phase"
+      ]
+    },
+    {
+      "q": "The small intestine is more prone to obstruction than the large intestine mainly due to its:",
+      "correct": "Narrow lumen",
+      "wrong": [
+        "Longer overall length",
+        "Thicker muscular wall",
+        "Greater number of diverticula"
+      ]
+    },
+    {
+      "q": "Which combination of histological features best distinguishes Crohn's disease from ulcerative colitis on microscopy?",
+      "correct": "Non-caseating granulomas with near-normal goblet cells (Crohn's) versus absent granulomas with depleted/distorted goblet cells and crypt abscesses (UC)",
+      "wrong": [
+        "Both show identical granuloma rates and identical goblet cell patterns",
+        "UC shows granulomas in 60% of cases while Crohn's never does",
+        "Crohn's shows crypt abscesses while UC shows non-caseating granulomas"
+      ]
+    },
+    {
+      "q": "Corticosteroids and chronic alcohol/smoking both injure the gastric mucosa, but by different mechanisms:",
+      "correct": "Corticosteroids block prostaglandin synthesis via phospholipase A2 inhibition, while alcohol/smoking directly injure the mucosa and impair its protective mechanisms",
+      "wrong": [
+        "Both act identically by inhibiting cyclooxygenase",
+        "Both act by increasing mucosal blood flow",
+        "Neither has any effect on gastric mucosal defenses"
+      ]
+    },
+    {
+      "q": "Non-caseating granulomas in Crohn's disease reflect:",
+      "correct": "A delayed-type, TH1/interferon-gamma-mediated hypersensitivity response",
+      "wrong": [
+        "An IgE-mediated immediate hypersensitivity reaction",
+        "Acute suppurative (neutrophil-driven) inflammation only",
+        "A viral cytopathic effect"
+      ]
+    },
+    {
+      "q": "Ulcerative colitis patients require closer long-term colorectal cancer surveillance than most Crohn's disease patients mainly because of:",
+      "correct": "UC's distinctly higher risk of malignant transformation related to continuous, long-standing colonic mucosal inflammation",
+      "wrong": [
+        "UC's transmural fibrosis and deep fissuring",
+        "Crohn's disease being entirely confined to the rectum",
+        "UC's association with gluten sensitivity"
+      ]
+    },
+    {
+      "q": "Marked fibrosis and bowel wall thickening are characteristic of Crohn's disease rather than ulcerative colitis because:",
+      "correct": "Crohn's disease causes transmural inflammation involving all bowel wall layers",
+      "wrong": [
+        "Ulcerative colitis always causes more severe transmural fibrosis",
+        "Crohn's disease is limited to the mucosa only",
+        "Fibrosis is unrelated to the depth of inflammation in either disease"
+      ]
+    },
+    {
+      "q": "Bile reflux and ischemic/free-radical processes are classified alongside H. pylori and NSAIDs as:",
+      "correct": "Aggressive factors that injure the gastric mucosa or impair its defenses",
+      "wrong": [
+        "Defending factors that protect the gastric mucosa",
+        "Factors with no relevance to peptic ulcer pathogenesis",
+        "Exclusively causes of esophageal, not gastric, disease"
+      ]
+    },
+    {
+      "q": "The rationale for using PPIs/H2 blockers as first-line peptic ulcer therapy, given the aggressive-defensive imbalance model, is that they:",
+      "correct": "Reduce acid secretion, shifting the balance back toward mucosal defense to allow healing",
+      "wrong": [
+        "Directly kill H. pylori without need for antibiotics",
+        "Increase pepsin activity to accelerate ulcer closure",
+        "Eliminate the need for addressing NSAID use or H. pylori entirely"
+      ]
+    },
+    {
+      "q": "Esophagitis is not exclusively a reflux-related condition because:",
+      "correct": "It is classified as an inflammatory lesion that can also result from various other clinical conditions and infections",
+      "wrong": [
+        "It is, by strict definition, always caused by bacterial infection",
+        "Reflux is anatomically impossible in the esophagus",
+        "It only occurs following esophageal surgery"
+      ]
+    },
+    {
+      "q": "Ulcers are more prone to significant bleeding or perforation than erosions mainly because:",
+      "correct": "Ulcers extend into or beyond the submucosa where larger vessels and deeper structures lie",
+      "wrong": [
+        "Erosions are always larger in surface area than ulcers",
+        "Ulcers are, by definition, always infected",
+        "Erosions occur only in the esophagus, where bleeding cannot occur"
+      ]
+    },
+    {
+      "q": "H. pylori's platelet-activating factor contributes to mucosal injury mainly by:",
+      "correct": "Causing thrombotic occlusion of surface capillaries, compromising mucosal blood flow",
+      "wrong": [
+        "Increasing mucosal blood flow and oxygenation",
+        "Stimulating excess mucus production",
+        "Directly neutralizing gastric acid"
+      ]
+    },
+    {
+      "q": "Primary and secondary malabsorption syndrome converge on the same clinical hallmark (steatorrhea) because:",
+      "correct": "Both ultimately impair intestinal absorption of nutrients, despite differing in whether the defect is intrinsic or extrinsic to the mucosa",
+      "wrong": [
+        "Both are caused by identical genetic mutations",
+        "Steatorrhea only occurs in primary MAS, not secondary",
+        "Secondary MAS never affects nutrient absorption"
+      ]
+    },
+    {
+      "q": "The patchy 'skip lesion' pattern of Crohn's disease versus the continuous involvement of ulcerative colitis implies that:",
+      "correct": "Crohn's disease reflects a multifocal granulomatous process, while UC reflects a more uniform mucosal immune injury without focal sparing",
+      "wrong": [
+        "Both diseases have identical, indistinguishable distribution patterns",
+        "UC always skips the rectum, while Crohn's never does",
+        "Crohn's disease is always confined to a single continuous segment"
+      ]
+    },
+    {
+      "q": "Acute appendicitis is managed as a surgical emergency mainly because:",
+      "correct": "Untreated obstruction leads to progressive ischemia, bacterial proliferation, and risk of rupture with peritonitis, which surgery prevents",
+      "wrong": [
+        "Antibiotics are never effective in any case of appendicitis",
+        "The appendix has no blood supply, making ischemia irrelevant",
+        "Appendicitis always resolves spontaneously without treatment"
+      ]
+    },
+    {
+      "q": "The sigmoid colon is the most common site of diverticular disease because, per the source's general concept of a diverticulum, it is where:",
+      "correct": "A blind pouch related to the alimentary tract most commonly develops due to wall weakness",
+      "wrong": [
+        "The mucosa is thickest and most resistant to herniation",
+        "No blood vessels penetrate the bowel wall",
+        "The bowel wall is completely rigid"
+      ]
+    },
+    {
+      "q": "The clinical importance of chronic gastritis is logically tied to its histological progression because:",
+      "correct": "Chronic gastritis causes intestinal metaplasia and atrophy that may progress to dysplasia and carcinoma",
+      "wrong": [
+        "Chronic gastritis never shows any histological progression",
+        "Chronic gastritis is unrelated to any malignant potential",
+        "Chronic gastritis always resolves spontaneously without sequelae"
+      ]
+    },
+    {
+      "q": "The difference in H. pylori prevalence between duodenal ulcer (virtually all) and gastric ulcer (about 70%) patients suggests that:",
+      "correct": "Other factors besides H. pylori account for a larger share of gastric ulcer cases than duodenal ulcer cases",
+      "wrong": [
+        "H. pylori is irrelevant to gastric ulcer formation",
+        "Gastric ulcers are never associated with H. pylori",
+        "Duodenal ulcers are never associated with H. pylori"
+      ]
+    },
+    {
+      "q": "Volvulus can progress from simple obstruction to bowel infarction because the same twisting mechanism:",
+      "correct": "Also twists the mesentery and its blood vessels, compromising blood supply to the affected loop",
+      "wrong": [
+        "Has no effect on the bowel's blood supply",
+        "Only affects the mucosal lining, sparing the vasculature",
+        "Always resolves spontaneously without vascular compromise"
+      ]
+    },
+    {
+      "q": "Crohn's disease and ulcerative colitis are still described as having an idiopathic etiology, despite known immune mechanisms, because:",
+      "correct": "No single definitive causative agent has been identified despite known genetic, immunologic, and exogenous contributing factors",
+      "wrong": [
+        "Their causes are fully known and have a single confirmed pathogen",
+        "They are caused exclusively by dietary gluten intake",
+        "They have no known immune involvement at all"
+      ]
+    },
+    {
+      "q": "Extra-intestinal manifestations of IBD (arthritis, erythema nodosum, skin lesions, hepatic involvement) occur because:",
+      "correct": "Both IBD types are systemic, chronic inflammatory disorders, not confined purely to the gut",
+      "wrong": [
+        "IBD is a purely localized gut infection with no systemic component",
+        "These manifestations are unrelated to IBD and are coincidental",
+        "IBD only ever affects the skin, never the joints or liver"
+      ]
+    },
+    {
+      "q": "A gastric mucosal injury remains a superficial erosion rather than progressing to a true ulcer as long as:",
+      "correct": "At least one of the mucus/bicarbonate barrier, blood flow, or epithelial turnover mechanisms sufficiently limits the damage",
+      "wrong": [
+        "The injury has already reached the muscularis propria",
+        "No protective mechanisms are functioning at all",
+        "The patient has taken NSAIDs for less than one day"
+      ]
+    },
+    {
+      "q": "H. pylori is considered a unifying pathogen across chronic gastritis, peptic ulcer disease, and gastric cancer because it:",
+      "correct": "Initiates chronic cytokine/toxin-mediated inflammation that predisposes to both ulceration and the metaplasia-dysplasia-carcinoma sequence",
+      "wrong": [
+        "Causes each disease through entirely unrelated, independent mechanisms",
+        "Is only relevant to esophageal disease, not gastric disease",
+        "Has been definitively ruled out as a cause of any of these three conditions"
+      ]
+    }
+  ]
+};/* ===================== FLASHCARDS ===================== */
+let fcLevel = 'easy';
+let currentFcList = flashcardsByLevel[fcLevel];
+
+const fcGrid = document.getElementById('fcGrid');
+const fcCount = document.getElementById('fcCount');
+function renderCards(list){
+  fcGrid.innerHTML = '';
+  list.forEach((c,i)=>{
+    const card = document.createElement('div');
+    card.className = 'fc-card';
+    card.innerHTML = `
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><span class="tag">Q${i+1}</span>${c.q}</div>
+        <div class="fc-face fc-back">${c.a}</div>
+      </div>`;
+    card.addEventListener('click', ()=>card.classList.toggle('flipped'));
+    fcGrid.appendChild(card);
+  });
+  fcCount.textContent = list.length + ' cards';
+}
+renderCards(currentFcList);
+document.getElementById('shuffleBtn').addEventListener('click', ()=>{
+  const shuffled = [...currentFcList].sort(()=>Math.random()-0.5);
+  currentFcList = shuffled;
+  renderCards(shuffled);
+});
+document.getElementById('flipAllBtn').addEventListener('click', ()=>{
+  document.querySelectorAll('.fc-card').forEach(c=>c.classList.toggle('flipped'));
+});
+
+/* ===================== QUIZ ===================== */
+let quizLevel = 'easy';
+let quizData = quizDataByLevel[quizLevel];
+let score = 0;
+document.getElementById('scoreTotal').textContent = quizData.length;
+
+function shuffleArr(arr){
+  const a = [...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+function buildQuiz(){
+  score = 0;
+  document.getElementById('scoreVal').textContent = score;
+  document.getElementById('scoreTotal').textContent = quizData.length;
+  const list = document.getElementById('quizList');
+  list.innerHTML = '';
+  quizData.forEach((item,idx)=>{
+    const options = shuffleArr([item.correct, ...item.wrong]);
+    const q = document.createElement('div');
+    q.className = 'q-item';
+    q.innerHTML = `
+      <div class="q-head"><span class="q-num">Q${idx+1}</span><span class="q-text">${item.q}</span></div>
+      <div class="q-opts"></div>`;
+    const optsWrap = q.querySelector('.q-opts');
+    options.forEach(optText=>{
+      const b = document.createElement('button');
+      b.className = 'q-opt';
+      b.textContent = optText;
+      b.addEventListener('click', ()=>{
+        optsWrap.querySelectorAll('.q-opt').forEach(o=>o.disabled = true);
+        if(optText === item.correct){
+          b.classList.add('correct');
+          score++;
+        } else {
+          b.classList.add('wrong');
+          optsWrap.querySelectorAll('.q-opt').forEach(o=>{
+            if(o.textContent === item.correct) o.classList.add('correct');
+          });
+        }
+        document.getElementById('scoreVal').textContent = score;
+      });
+      optsWrap.appendChild(b);
+    });
+    list.appendChild(q);
+  });
+}
+buildQuiz();
+document.getElementById('resetQuizBtn').addEventListener('click', buildQuiz);
+
+/* ===================== LEVEL SWITCHING ===================== */
+document.querySelectorAll('.level-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const target = btn.dataset.target;
+    const level = btn.dataset.level;
+    document.querySelectorAll(`.level-btn[data-target="${target}"]`).forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    if(target === 'fc'){
+      fcLevel = level;
+      currentFcList = flashcardsByLevel[fcLevel];
+      renderCards(currentFcList);
+    } else if(target === 'quiz'){
+      quizLevel = level;
+      quizData = quizDataByLevel[quizLevel];
+      buildQuiz();
+    }
+  });
+});
+</script>
+</body>
+</html>
